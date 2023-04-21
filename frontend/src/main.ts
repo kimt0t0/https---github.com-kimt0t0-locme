@@ -2,7 +2,7 @@
 // Modules
 import { createApp } from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faUser, faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faGlobe, faWifi } from '@fortawesome/free-solid-svg-icons'
 // Internal
 import App from './App.vue'
 import './registerServiceWorker'
@@ -11,12 +11,14 @@ import store from './store'
 // Components
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Button from '@/components/Button.vue'
+import Functions from '@/components/Functions.vue'
+import HeroSecondary from '@/components/HeroSecondary.vue'
 import Reassurance from '@/components/Reassurance.vue'
 import Socials from '@/components/Socials.vue'
 
 // LOGIC
 // add icons to app library
-library.add(faUser, faGlobe)
+library.add(faUser, faGlobe, faWifi)
 
 // create app
 const app = createApp(App)
@@ -28,6 +30,8 @@ app.use(store)
 // add global components
 app.component('Icon', FontAwesomeIcon)
   .component('Button', Button)
+  .component('Functions', Functions)
+  .component('HeroSecondary', HeroSecondary)
   .component('Reassurance', Reassurance)
   .component('Socials', Socials)
 

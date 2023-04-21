@@ -6,6 +6,7 @@ import Hero from '@/components/Hero'
   <section class="section __home">
     <Hero />
     <Reassurance />
+    <Functions />
   </section>
 </template>
 
