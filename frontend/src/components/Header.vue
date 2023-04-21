@@ -1,13 +1,15 @@
 <script lang="ts" setup>
     import Navbar from './Navbar.vue'
-    import UserButton from './UserButton.vue'
 </script>
 
 <template>
     <header class="header">
         <img class="logo" src="@/assets/logo.svg" alt="logo">
         <Navbar />
-        <UserButton />
+        <Button class="user-btn" color="transparent" size="medium">
+            <Icon icon="user" />
+            Se connecter / S'inscrire
+        </Button>
     </header >
 </template>
 
@@ -22,6 +24,19 @@
     align-items: center;
     .logo {
         width: 100px;
+    }
+    .user-btn {
+        box-sizing: border-box;
+        max-width: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        svg {
+            padding: $space-s;
+            border-radius: $radius-circle;
+            background-color: $c-txt;
+            color: white;
+        }
     }
 }
 </style>

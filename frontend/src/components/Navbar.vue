@@ -10,4 +10,14 @@
 
 <style lang="scss">
 @use '@/styles/App.scss' as *;
+
+.navlink {
+    text-decoration: none;
+    color: $c-txt;
+    font-weight: 600;
+    margin: 0 $space-m;
+    &:hover, &:focus {
+        text-decoration: underline;
+    }
+}
 </style>
