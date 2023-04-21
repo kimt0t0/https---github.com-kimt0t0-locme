@@ -1,0 +1,164 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": true,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true,
+      "searchable": false
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "firstName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 30,
+      "minLength": 2
+    },
+    "lastName": {
+      "type": "string",
+      "required": true,
+      "minLength": 2
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "admin",
+        "staff",
+        "staff_sec",
+        "fest-goer"
+      ],
+      "default": "admin",
+      "required": true
+    },
+    "SIREN": {
+      "type": "string",
+      "default": "000000000",
+      "required": false,
+      "unique": true,
+      "maxLength": 9,
+      "minLength": 9,
+      "regex": "/^\\d{9}$/"
+    },
+    "SIRET": {
+      "type": "string",
+      "default": "000000000RM000",
+      "regex": "^\\d{9}\\w{5}$",
+      "required": false,
+      "unique": true,
+      "maxLength": 14,
+      "minLength": 14
+    },
+    "address": {
+      "type": "json",
+      "required": true
+    },
+    "festival": {
+      "type": "json",
+      "required": true
+    },
+    "birthdate": {
+      "type": "date",
+      "required": false
+    },
+    "contact1": {
+      "type": "json"
+    },
+    "contact2": {
+      "type": "json"
+    },
+    "health": {
+      "type": "richtext",
+      "maxLength": 500,
+      "minLength": 5
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "position": {
+      "displayName": "position",
+      "type": "component",
+      "repeatable": false,
+      "component": "position.position"
+    },
+    "user_intervs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::alert.alert",
+      "mappedBy": "users_permissions_users"
+    },
+    "groups_admins": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::group.group",
+      "inversedBy": "admins"
+    },
+    "alerts_owneds": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::alert.alert",
+      "mappedBy": "user"
+    }
+  }
+}

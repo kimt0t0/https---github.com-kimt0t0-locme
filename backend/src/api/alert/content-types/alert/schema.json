@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "alerts",
+  "info": {
+    "singularName": "alert",
+    "pluralName": "alerts",
+    "displayName": "Alert",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "alerts_owneds"
+    },
+    "title": {
+      "type": "string",
+      "default": "URGENT",
+      "required": true,
+      "maxLength": 20,
+      "minLength": 5
+    },
+    "description": {
+      "type": "richtext",
+      "required": false,
+      "maxLength": 500,
+      "minLength": 5
+    },
+    "intervention": {
+      "type": "boolean",
+      "required": false
+    },
+    "users_permissions_users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "user_intervs"
+    },
+    "present": {
+      "type": "boolean",
+      "default": true,
+      "required": true
+    },
+    "groups": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::group.group",
+      "mappedBy": "alerts"
+    }
+  }
+}
