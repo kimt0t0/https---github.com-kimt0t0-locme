@@ -5,10 +5,16 @@
 
 <template>
   <Header />
-  <router-view/>
+  <main class="main">
+    <router-view/>
+  </main>
   <Footer />
 </template>
 
 <style lang="scss">
-
+  @use '@/styles/App.scss' as *;
+  .main {
+    max-width: $classic-ctn;
+    margin: $space-m auto;
+  }
 </style>

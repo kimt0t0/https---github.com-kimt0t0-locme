@@ -19,7 +19,6 @@ defineProps<{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: nowrap;
     border: transparent;
     border-radius: $radius-s;
     font-size: 1rem;
@@ -30,14 +29,14 @@ defineProps<{
         background-color: $c-txt;
         color: white;
         &:hover, &:focus {
-            background-color: darken($c-txt, 8%);
+            background-color: $primary;
         }
     }
     &.__transparent {
         background-color: transparent;
         color: $c-txt;
         &:hover, &:focus {
-            background-color: lighten($c-txt, 40%)
+            background-color: lighten($c-txt, 40%);
         }
     }
     /* Sizes */

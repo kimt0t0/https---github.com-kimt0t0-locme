@@ -16,3 +16,13 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li {
 li {
     list-style-type: none;
 }
+
+// Global style classes
+.classic-link {
+    color: $c-txt;
+    font-size: 1rem;
+    transition: all 300ms ease-in;
+    &:hover, &:focus {
+        color: $primary;
+    }
+}
