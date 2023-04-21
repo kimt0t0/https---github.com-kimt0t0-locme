@@ -11,6 +11,7 @@ import store from './store'
 // Components
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Button from '@/components/Button.vue'
+import Reassurance from '@/components/Reassurance.vue'
 import Socials from '@/components/Socials.vue'
 
 // LOGIC
@@ -27,6 +28,7 @@ app.use(store)
 // add global components
 app.component('Icon', FontAwesomeIcon)
   .component('Button', Button)
+  .component('Reassurance', Reassurance)
   .component('Socials', Socials)
 
 // mount app
