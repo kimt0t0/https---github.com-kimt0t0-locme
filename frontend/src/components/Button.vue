@@ -31,6 +31,14 @@ defineProps<{
             background-color: $primary;
         }
     }
+    &.__primary {
+        background-color: $primary;
+        color: #fff;
+        &:hover, &:focus {
+            background-color: #fff;
+            color: $primary;
+        }
+    }
     &.__transparent {   
         font-size: $fsize-xs;
         background-color: transparent;
