@@ -26,6 +26,7 @@
         .icon {
             box-sizing: border-box;
             margin: $space-s;
+            min-width: 30px;
             width: 30px;
             height: 20px;
             border-radius: 5px 50% 50% 15px;

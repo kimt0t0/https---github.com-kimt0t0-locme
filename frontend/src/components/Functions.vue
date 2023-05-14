@@ -28,14 +28,16 @@
 
 <template>
     <section class="section-functions">
-        <HeroSecondary color="white" background="classic">
-            Fonctionnalités et caractéristiques du bracelet
-        </HeroSecondary>
-        <ul class="functions-list">
-            <li class="fl-item" v-for="functionality in functionalities">
-                <Icon :icon="functionality.icon" />{{ functionality.text }}
-            </li>
-        </ul>
+        <div class="sf-container">
+            <HeroSecondary color="white" background="classic">
+                Fonctionnalités et caractéristiques du bracelet
+            </HeroSecondary>
+            <ul class="functions-list">
+                <li class="fl-item" v-for="functionality in functionalities">
+                    <Icon :icon="functionality.icon" />{{ functionality.text }}
+                </li>
+            </ul>
+        </div>
     </section>
 </template>
 
@@ -43,6 +45,11 @@
     @use '@/styles/App.scss' as *;
     .section-functions {
         background-color: $dark;
+        padding: $space-l 0;
+    }
+    .sf-container {
+        max-width: $classic-ctn;
+        margin: 0 auto;
     }
     .functions-list {
         box-sizing: border-box;
@@ -54,7 +61,6 @@
             box-sizing: border-box;
             width: 490px;
             height: 80px;
-            margin: $space-s 8% $space-s auto;
             display: flex;
             align-items: center;
             color: #fff;

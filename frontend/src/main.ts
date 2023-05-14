@@ -17,6 +17,7 @@ import CtaBloc from '@/components/CtaBloc.vue'
 import Functions from '@/components/Functions.vue'
 import HeroSecondary from '@/components/HeroSecondary.vue'
 import HowTo from '@/components/HowTo.vue'
+import PrezDashboard from '@/components/PrezDashboard.vue'
 import Reassurance from '@/components/Reassurance.vue'
 import Socials from '@/components/Socials.vue'
 
@@ -40,6 +41,7 @@ app.component('Icon', FontAwesomeIcon)
   .component('Functions', Functions)
   .component('HeroSecondary', HeroSecondary)
   .component('HowTo', HowTo)
+  .component('PrezDashboard', PrezDashboard)
   .component('Reassurance', Reassurance)
   .component('Socials', Socials)
 
