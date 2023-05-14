@@ -7,27 +7,27 @@
         {
             title: "Accompagnement",
             text: "Tout au long du festival",
-            image: 'rplaceholder.jpg'
+            image: 'followup.webp'
         },
         {
             title: "Formation aux outils",
             text: "Présentation en détails du tableau de bord de gestion",
-            image: 'rplaceholder.jpg'
+            image: 'training.webp'
         },
         {
             title: "Nouveau service",
             text: "Offrez une expérience nouvelle à vos festivaliers !",
-            image: 'rplaceholder.jpg'
+            image: 'service.webp'
         },
         {
             title: "Réservable par vos festivaliers",
             text: "Option gratuite disponible lors de l'achat des billets sur votre site",
-            image: 'rplaceholder.jpg'
+            image: 'bookable.webp'
         },
         {
             title: "Gestion",
             text: "Sécurité améliorée pour vos événements",
-            image: 'rplaceholder.jpg'
+            image: 'security.webp'
         },
     ]
 </script>

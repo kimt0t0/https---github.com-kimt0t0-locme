@@ -8,6 +8,7 @@
         <Navbar />
         <Button class="user-btn" color="transparent" size="medium">
             <Icon icon="user" />
+            <!-- <img src="@/assets/icons/profile.svg" class="icon user-icon" alt="icone utilisateur" /> -->
             Se connecter / S'inscrire
         </Button>
     </header >
@@ -32,7 +33,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        svg {
+        > svg, .user-icon {
             padding: $space-s;
             border-radius: $radius-circle;
             background-color: $dark;

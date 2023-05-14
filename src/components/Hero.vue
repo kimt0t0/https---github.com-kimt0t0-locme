@@ -2,19 +2,21 @@
 
 <template>
     <section class="hero-section">
-        <div class="hero-title-ctn">
-            <h1 class="hero-title">LocMe</h1>
-            <h2 class="hero-slogan">
-                <span class="title-line">Un bracelet connecté</span>
-                <span class="title-line">pour profiter de votre festival en toute sécurité</span>
-            </h2>
-            <p class="hero-subtitle">Louez nos bracelets qui peuvent sauver des vies !</p>
-        </div>
-        <div class="hero-subcontent">
-            <Button class="hs-btn" color="primary" size="medium">Demandez un devis gratuit en un clic !</Button>
-            <RouterLink class="white-link" to="/contact" alt="Aller vers la page de contact">
-                Je souhaite être recontacté·e
-            </RouterLink>
+        <div class="hs-container">
+            <div class="hero-title-ctn">
+                <h1 class="hero-title">LocMe</h1>
+                <h2 class="hero-slogan">
+                    <span class="title-line">Un bracelet connecté</span>
+                    <span class="title-line">pour profiter de votre festival en toute sécurité</span>
+                </h2>
+                <p class="hero-subtitle">Louez nos bracelets qui peuvent sauver des vies !</p>
+            </div>
+            <div class="hero-subcontent">
+                <Button class="hs-btn" color="primary" size="medium">Demandez un devis gratuit en un clic !</Button>
+                <RouterLink class="white-link" to="/contact" alt="Aller vers la page de contact">
+                    Je souhaite être recontacté·e
+                </RouterLink>
+            </div>
         </div>
     </section>
 </template>
@@ -23,14 +25,18 @@
 @use '@/styles/App.scss' as *;
 
 .hero-section {
-    background: url("@/assets/images/placeholder.webp") no-repeat center center;
-    background-size: contain;
-    box-sizing: border-box;
-    padding: $space-s 0;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background: url("@/assets/images/bracelets-01.jpg") no-repeat center center;
+    background-size: cover;
+    padding: $space-xl $space-l $space-xxxl;
+    .hs-container {
+        box-sizing: border-box;
+        max-width: $classic-ctn;
+        margin: 0 auto;
+        min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
     /* Upper half */
     .hero-title-ctn {
         display: flex;
@@ -56,6 +62,8 @@
             color: $primary;
         }
         .hero-subtitle {
+            text-transform: uppercase;
+            color: #fff;
             font-size: $fsize-l;
         }
     }

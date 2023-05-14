@@ -44,11 +44,9 @@ defineProps<{
         background-color: transparent;
         color: $dark;
         &:hover, &:focus {
-            background-color: $primary;
-            color: #fff;
-            > svg {
-                color:#fff;
-                background-color: $primary;
+            color: $primary;
+            > svg, .user-icon {
+                color:$primary;
             }
         }
     }
