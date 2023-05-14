@@ -15,7 +15,7 @@
             <div class="pds-contents">
                 <div class="pds-illus"></div>
                     <!-- <img src="" class="pds-illus" alt="Démonstration du tableau de bord LocMe" /> -->
-                    <ClassicList :listItems="listItems"/>
+                    <ClassicList class="classic-list-cp" :title="listTitle" :listItems="listItems"/>
             </div>
         </div>
 
@@ -27,11 +27,25 @@
 
     .prezdashboard-section {
         background-color: $primary;
-        padding: $space-xl 0;
+        padding: $space-xl 0 $space-xxxl;
         .pds-container {
             box-sizing: border-box;
             max-width: $classic-ctn;
             margin: 0 auto;
         }
+        .pds-contents {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .pds-illus {
+        height: 330px;
+        width: 55%;
+        background-color: $grey;
+        border-radius: $radius-xxs;
+    }
+    .classic-list-cp {
+        width: 42%;
     }
 </style>

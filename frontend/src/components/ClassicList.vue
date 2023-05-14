@@ -20,6 +20,10 @@
 <style lang="scss">
     @use '@/styles/App.scss' as *;
 
+    .cl-title {
+        margin-bottom: $space-l;
+    }
+
     .cl-item {
         display: flex;
         margin: $space-m auto;

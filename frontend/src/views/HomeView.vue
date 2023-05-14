@@ -10,6 +10,7 @@ import Hero from '@/components/Hero'
     <CtaBloc title="Vous êtes un organisateur ou une entreprise ?" />
     <HowTo />
     <PrezDashboard />
+    <PrezFind />
     <CtaBloc title="Vous souhaitez plus d'informations et obtenir un devis ?" />
   </section>
 </template>

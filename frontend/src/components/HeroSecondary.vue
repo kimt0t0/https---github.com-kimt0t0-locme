@@ -17,7 +17,7 @@ defineProps<{
 <style lang="scss">
 @use '@/styles/App.scss' as *;
     .hero-secondary {
-        font-size: $fsize-xl;
+        font-size: $fsize-l;
         line-height: 1.2;
         font-weight: 700;
         text-transform: uppercase;
