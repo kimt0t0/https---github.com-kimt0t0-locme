@@ -12,9 +12,11 @@ import store from './store'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Button from '@/components/Button.vue'
 import ButtonLink from '@/components/ButtonLink.vue'
+import ClassicList from '@/components/ClassicList.vue'
 import CtaBloc from '@/components/CtaBloc.vue'
 import Functions from '@/components/Functions.vue'
 import HeroSecondary from '@/components/HeroSecondary.vue'
+import HowTo from '@/components/HowTo.vue'
 import Reassurance from '@/components/Reassurance.vue'
 import Socials from '@/components/Socials.vue'
 
@@ -33,9 +35,11 @@ app.use(store)
 app.component('Icon', FontAwesomeIcon)
   .component('Button', Button)
   .component('ButtonLink', ButtonLink)
+  .component('ClassicList', ClassicList)
   .component('CtaBloc', CtaBloc)
   .component('Functions', Functions)
   .component('HeroSecondary', HeroSecondary)
+  .component('HowTo', HowTo)
   .component('Reassurance', Reassurance)
   .component('Socials', Socials)
 

@@ -1,13 +1,14 @@
 <script lang="ts" setup>
 defineProps<{
     color: String,
-    background: String,
+    background?: String,
     icon?: String
+    align?: String
 }>()
 </script>
 
 <template>
-    <h2 :class="'hero-secondary __' + color + ' __bg-' + background">
+    <h2 :class="'hero-secondary __' + color + ' __bg-' + background + ' __align-' + align">
         <Icon :icon="icon" />
         <slot></slot>
     </h2>
@@ -16,8 +17,8 @@ defineProps<{
 <style lang="scss">
 @use '@/styles/App.scss' as *;
     .hero-secondary {
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        font-size: $fsize-l;
+        font-size: $fsize-xl;
+        line-height: 1.2;
         font-weight: 700;
         text-transform: uppercase;
         text-align: center;
@@ -40,6 +41,10 @@ defineProps<{
         }
         &.__bg-neutral {
             background-color: lighten($dark, 50%);
+        }
+        /* align */
+        &.__align-left {
+            text-align: left;
         }
     }
 </style>
