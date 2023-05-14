@@ -49,7 +49,7 @@
 <style lang="scss">
 @use '@/styles/App.scss' as *;
 .reassurance-section {
-    margin: $space-xl 0;
+    
     .rs-list {
         display: flex;
         justify-content: space-between;

@@ -11,6 +11,8 @@ import store from './store'
 // Components
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import Button from '@/components/Button.vue'
+import ButtonLink from '@/components/ButtonLink.vue'
+import CtaBloc from '@/components/CtaBloc.vue'
 import Functions from '@/components/Functions.vue'
 import HeroSecondary from '@/components/HeroSecondary.vue'
 import Reassurance from '@/components/Reassurance.vue'
@@ -30,6 +32,8 @@ app.use(store)
 // add global components
 app.component('Icon', FontAwesomeIcon)
   .component('Button', Button)
+  .component('ButtonLink', ButtonLink)
+  .component('CtaBloc', CtaBloc)
   .component('Functions', Functions)
   .component('HeroSecondary', HeroSecondary)
   .component('Reassurance', Reassurance)

@@ -29,7 +29,6 @@
     <footer class="footer">
         <!-- COLUMN 1 -->
         <div class="footer-column">
-            <img class="logo-footer" src="@/assets/logo.svg" alt="logo" />
             <Socials />
         </div>
             <!-- COLUMN 2 -->
@@ -53,10 +52,9 @@
 
 .footer {
     box-sizing: border-box;
-    max-width: $classic-ctn;
     margin: 0 auto;
     padding: $space-s $space-m;
-    background-color: $c-txt;
+    background-color: #000;
     color: white;
     font-size: 14px;
     display: flex;

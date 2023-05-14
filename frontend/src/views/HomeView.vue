@@ -7,6 +7,8 @@ import Hero from '@/components/Hero'
     <Hero />
     <Reassurance />
     <Functions />
+    <CtaBloc title="Vous êtes un organisateur ou une entreprise ?" />
+      <!-- <CtaBloc title="Vous souhaitez plus d'informations et obtenir un devis ?" /> -->
   </section>
 </template>
 

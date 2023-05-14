@@ -5,34 +5,30 @@
     }[] = [
         {
             icon: 'wifi',
-            text: 'Bracelet en silicone lisse, facile à nettoyer et attache solide'
+            text: 'Retrouvez vos amies malgré la saturation du réseau'
         },
         {
             icon: 'wifi',
-            text: 'Grande autonomie de la batterie'
+            text: 'Bracelet personnalisable avec 3 couleurs au choix'
         },
         {
             icon: 'wifi',
-            text: 'Un style moderne, 3 couleurs au choix'
+            text: 'Autonomie prolongée pour couvrir toute la durée du festival'
         },
         {
             icon: 'wifi',
-            text: 'Compatible avec toutes les marques de téléphone'
+            text: "Résistant à l'eau, aux chocs et à l'usure pour résister aux conditions difficiles d'un festival"
         },
         {
             icon: 'wifi',
-            text: 'La location de vos bracelets à tout petit prix'
-        },
-        {
-            icon: 'wifi',
-            text: 'Usage du produit possible malgré la saturation du réseau'
-        },
+            text: 'Compatible Android et iOS'
+        }
     ]
 </script>
 
 <template>
     <section class="section-functions">
-        <HeroSecondary color="classic" background="classic">
+        <HeroSecondary color="white" background="classic">
             Fonctionnalités et caractéristiques du bracelet
         </HeroSecondary>
         <ul class="functions-list">
@@ -45,25 +41,29 @@
 
 <style lang="scss">
     @use '@/styles/App.scss' as *;
+    .section-functions {
+        background-color: $dark;
+    }
     .functions-list {
+        box-sizing: border-box;
         display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-end;
+        
         .fl-item {
             box-sizing: border-box;
-            width: 48%;
+            width: 490px;
             height: 80px;
-            margin: $space-s;
+            margin: $space-s 8% $space-s auto;
             display: flex;
             align-items: center;
-            padding: $space-s;
-            background-color: lighten($c-txt, 50%);
-            border-radius: $radius-xxs;
+            color: #fff;
             svg {
-                margin-right: $space-s;
+                margin-right: $space-m;
                 padding: $space-s;
-                border-radius: $radius-circle;
-                background-color: lighten($c-txt, 20%);
+                border-radius: 5px 50% 50% 15px;
+                background-color: $primary;
+                transform: rotate(-12deg);
             }
         }
     }

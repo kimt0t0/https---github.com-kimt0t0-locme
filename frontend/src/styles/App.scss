@@ -2,9 +2,11 @@
 @import './global/mixins';
 
 body {
-    color: $c-txt;
+    color: $dark;
     font-family: "sofia-pro", Arial, Helvetica, sans-serif;
     font-size: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 // Clean global style
@@ -17,9 +19,15 @@ li {
     list-style-type: none;
 }
 
+// Sections
+.section-classic {
+    max-width: $classic-ctn;
+    margin: $space-xl auto;
+}
+
 // Global style classes
 .classic-link {
-    color: $c-txt;
+    color: $dark;
     font-size: 1rem;
     transition: all 300ms ease-in;
     &:hover, &:focus {

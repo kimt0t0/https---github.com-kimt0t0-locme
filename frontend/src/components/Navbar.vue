@@ -13,7 +13,7 @@
 
 .navlink {
     text-decoration: none;
-    color: $c-txt;
+    color: $dark;
     font-weight: 600;
     margin: 0 $space-m;
     &:hover, &:focus {

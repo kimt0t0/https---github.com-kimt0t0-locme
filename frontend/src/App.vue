@@ -14,7 +14,7 @@
 <style lang="scss">
   @use '@/styles/App.scss' as *;
   .main {
-    max-width: $classic-ctn;
-    margin: $space-m auto;
+    margin: 0;
+    padding: 0;
   }
 </style>

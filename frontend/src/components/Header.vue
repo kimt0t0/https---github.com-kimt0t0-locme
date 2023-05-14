@@ -35,7 +35,7 @@
         svg {
             padding: $space-s;
             border-radius: $radius-circle;
-            background-color: $c-txt;
+            background-color: $dark;
             color: white;
         }
     }

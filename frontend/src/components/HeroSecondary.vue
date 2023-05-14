@@ -1,12 +1,14 @@
 <script lang="ts" setup>
 defineProps<{
     color: String,
-    background: String
+    background: String,
+    icon?: String
 }>()
 </script>
 
 <template>
     <h2 :class="'hero-secondary __' + color + ' __bg-' + background">
+        <Icon :icon="icon" />
         <slot></slot>
     </h2>
 </template>
@@ -27,14 +29,17 @@ defineProps<{
         border-radius: $radius-xxs;
         /* text color */
         &.__classic {
-            color: $c-txt;
+            color: $dark;
+        }
+        &.__white {
+            color: #fff;
         }
         /* background */
         &.__bg-classic {
             background-color: transparent;
         }
         &.__bg-neutral {
-            background-color: lighten($c-txt, 50%);
+            background-color: lighten($dark, 50%);
         }
     }
 </style>
