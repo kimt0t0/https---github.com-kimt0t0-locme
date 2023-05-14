@@ -12,6 +12,7 @@ import Hero from '@/components/Hero'
     <PrezDashboard />
     <PrezFind />
     <CtaBloc title="Vous souhaitez plus d'informations et obtenir un devis ?" />
+    <Customers />
   </section>
 </template>
 

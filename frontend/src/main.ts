@@ -14,6 +14,7 @@ import Button from '@/components/Button.vue'
 import ButtonLink from '@/components/ButtonLink.vue'
 import ClassicList from '@/components/ClassicList.vue'
 import CtaBloc from '@/components/CtaBloc.vue'
+import Customers from '@/components/Customers.vue'
 import Functions from '@/components/Functions.vue'
 import HeroSecondary from '@/components/HeroSecondary.vue'
 import HowTo from '@/components/HowTo.vue'
@@ -40,6 +41,7 @@ app.component('Icon', FontAwesomeIcon)
   .component('ButtonLink', ButtonLink)
   .component('ClassicList', ClassicList)
   .component('CtaBloc', CtaBloc)
+  .component('Customers', Customers)
   .component('Functions', Functions)
   .component('HeroSecondary', HeroSecondary)
   .component('HowTo', HowTo)

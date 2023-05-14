@@ -23,7 +23,7 @@ defineProps<{
         text-transform: uppercase;
         text-align: center;
         box-sizing: border-box;
-        width: 100%;
+        width: fit-content;
         display: flex;
         justify-content: center;
         padding: $space-m;
