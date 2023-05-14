@@ -21,7 +21,6 @@ defineProps<{
     align-items: center;
     border: transparent;
     border-radius: $radius-s;
-    font-size: 1rem;
     cursor: pointer;
     transition: all 300ms ease-in;
     /* Colors */
@@ -32,22 +31,33 @@ defineProps<{
             background-color: $primary;
         }
     }
-    &.__transparent {
+    &.__transparent {   
+        font-size: $fsize-xs;
         background-color: transparent;
         color: $c-txt;
         &:hover, &:focus {
-            background-color: lighten($c-txt, 40%);
+            background-color: $primary;
+            color: #fff;
+            > svg {
+                color:#fff;
+                background-color: $primary;
+            }
         }
     }
     /* Sizes */
     &.__small {
+        font-size: $fsize-xs;
         padding: $space-xs $space-s;
     }
     &.__medium {
-        font-size: $fsize-m;
+        font-size: $fsize-s;
         padding: $space-s $space-m;
     }
     &.__large {
+        font-size: $fsize-m;
+        padding: $space-m $space-l;
+    }
+    &.__bigger {
         font-size: $fsize-l;
         padding: $space-m $space-l;
     }

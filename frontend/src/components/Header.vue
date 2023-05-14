@@ -14,6 +14,7 @@
 </template>
 
 <style lang="scss">
+@use '@/styles/App.scss' as *;
 .header {
     max-width: $classic-ctn;
     margin: 0 auto;
