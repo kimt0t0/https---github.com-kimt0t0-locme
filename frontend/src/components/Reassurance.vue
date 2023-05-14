@@ -1,43 +1,32 @@
 <script lang="ts" setup>
     const reassurances: {
         title: String,
-        paragraphs: String[],
+        text: String,
         image: String
     }[] = [
         {
-            title: "Gardez l'esprit tranquille",
-            paragraphs: [
-                "On s'occupe de tout !",
-                "Une fois les bracelets loués, nos équipes gèrent l'organisation sur place: distribution aux festivaliers ayant réservé un bracelet, échange en cas de panne, support technique auprès de votre équipe de sécurité."
-            ],
+            title: "Accompagnement",
+            text: "Tout au long du festival",
             image: 'rplaceholder.jpg'
         },
         {
-            title: "Gardez l'esprit tranquille",
-            paragraphs: [
-                "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte."
-            ],
+            title: "Formation aux outils",
+            text: "Présentation en détails du tableau de bord de gestion",
             image: 'rplaceholder.jpg'
         },
         {
-            title: "Gardez l'esprit tranquille",
-            paragraphs: [
-                "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte."
-            ],
+            title: "Nouveau service",
+            text: "Offrez une expérience nouvelle à vos festivaliers !",
             image: 'rplaceholder.jpg'
         },
         {
-            title: "Gardez l'esprit tranquille",
-            paragraphs: [
-                "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte."
-            ],
+            title: "Réservable par vos festivaliers",
+            text: "Option gratuite disponible lors de l'achat des billets sur votre site",
             image: 'rplaceholder.jpg'
         },
         {
-            title: "Gardez l'esprit tranquille",
-            paragraphs: [
-                "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte."
-            ],
+            title: "Gestion",
+            text: "Sécurité améliorée pour vos événements",
             image: 'rplaceholder.jpg'
         },
     ]
@@ -50,7 +39,7 @@
                 <img class="rc-icon" alt="illustration" :src="require(`@/assets/icons/${reassurance.image}`)" />
                 <h3 class="rc-title">{{ reassurance.title }}</h3>
                 <div class="rc-text">
-                    <p v-for="par in reassurance.paragraphs">{{ par }}</p>
+                    {{  reassurance.text }}
                 </div>
             </li>
         </ul>
@@ -66,30 +55,27 @@
         justify-content: space-between;
         .reassurance-card {
             box-sizing: border-box;
-            width: 200px;
+            width: 220px;
             margin: 0 $space-s;
             display: flex;
             align-items: center;
             flex-direction: column;
             .rc-icon {
-                height: 100px;
-                width: 70px;
+                width: 112px;
+                height: 112px;
+                object-fit: contain;
             }
             .rc-title {
+                color: darken($primary, 20%);
+                font-size: $fsize-s;
+                font-weight: 800;
                 max-width: 180px;
                 text-align: center;
                 margin: $space-s 0;
             }
             .rc-text {
-                box-sizing: border-box;
-                width: 200px;
-                height: 300px;
-                padding: $space-m $space-s;
-                background-color: lighten($c-txt, 50%);
-                border-radius: $radius-xxs;
-                overflow: hidden;
-                flex-wrap: nowrap;
-                text-overflow: ellipsis;
+                width: 100%;
+                font-size: 0.85rem;
             }
         }
     }
