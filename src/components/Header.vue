@@ -1,15 +1,27 @@
 <script lang="ts" setup>
     import Navbar from './Navbar.vue'
+    // import { useProfileStore } from '@/stores/profile';
 </script>
 
 <template>
     <header class="header">
         <img class="logo" src="@/assets/logo.svg" alt="logo">
         <Navbar />
-        <ButtonLink path="/connexion" class="user-btn" color="transparent" size="medium">
+        <!-- If user disconnected -->
+        <ButtonLink path="/mon-compte" class="user-btn" color="transparent" size="medium">
+                <div class="icon user-icon"></div>
+                Se connecter / S'inscrire
+            </ButtonLink>
+        <!-- <ButtonLink v-if="!useProfileStore().connected" path="/connexion" class="user-btn" color="transparent" size="medium">
             <div class="icon user-icon"></div>
             Se connecter / S'inscrire
-        </ButtonLink>
+        </ButtonLink> -->
+        <!-- If user connected -->
+        <!-- <Button v-else @click="useProfileStore().setConnected(false)" class="user-btn" color="transparent" size="medium">
+            <div class="icon user-icon"></div>
+                <span class="ub-username">Bonjour {{ useProfileStore().userProfile.name }}</span>
+                Me déconnecter
+        </Button> -->
     </header >
 </template>
 

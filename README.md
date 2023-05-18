@@ -20,7 +20,9 @@ yarn build
 
 ### Add to production server
 
-Follow [Display Vue website on GithubPages](https://learnvue.co/articles/deploy-vue-to-github-pages)
+To create a new github page [Display Vue website on GithubPages](https://learnvue.co/articles/deploy-vue-to-github-pages)
+
+To update existing github page [Deployment script for View and GithubPages](https://cli.vuejs.org/guide/deployment.html#github-pages)
 
 ### Customize configuration
 

@@ -25,6 +25,11 @@ li {
     margin: $space-xl auto;
 }
 
+.classic-container {
+    max-width: $classic-ctn;
+    margin: 0 auto;
+}
+
 // Global style classes
 .classic-link {
     color: $dark;

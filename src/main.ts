@@ -1,6 +1,7 @@
 // IMPORTS
 // Modules
 import { createApp } from 'vue'
+// import { createPinia } from 'pinia'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUser, faGlobe, faWifi } from '@fortawesome/free-solid-svg-icons'
 // import { } from '@fortawesome/free-regular-svg-icons'
@@ -17,6 +18,7 @@ import ButtonLink from '@/components/ButtonLink.vue'
 import ClassicList from '@/components/ClassicList.vue'
 import CtaBloc from '@/components/CtaBloc.vue'
 import Customers from '@/components/Customers.vue'
+import Dashboard from '@/components/Dashboard.vue'
 import Functions from '@/components/Functions.vue'
 import HeroSecondary from '@/components/HeroSecondary.vue'
 import HowTo from '@/components/HowTo.vue'
@@ -32,8 +34,9 @@ library.add(faUser, faGlobe, faWifi)
 
 // create app
 const app = createApp(App)
-
+// const pinia = createPinia()
 // app use modules
+// app.use(pinia)
 app.use(store)
   .use(router)
 
@@ -44,6 +47,7 @@ app.component('Icon', FontAwesomeIcon)
   .component('ClassicList', ClassicList)
   .component('CtaBloc', CtaBloc)
   .component('Customers', Customers)
+  .component('Dashboard', Dashboard)
   .component('Functions', Functions)
   .component('HeroSecondary', HeroSecondary)
   .component('HowTo', HowTo)
