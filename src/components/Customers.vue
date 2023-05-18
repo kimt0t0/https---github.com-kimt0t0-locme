@@ -3,36 +3,35 @@
         name: String,
         role: String,
         comment: String,
-        photo: String
+        photo: any
     }[] = [
         {
             name: "Laurent",
             role: "Directeur de festival",
-            comment: "Toute l’équipe de LocMe a été disponible pour offrir un service de qualité aux festivaliers ",
-            photo: ""
+            comment: "Toute l'équipe de LocMe a été disponible pour offrir un service de qualité aux festivaliers ",
+            photo: new URL("@/assets/images/laurent.webp", import.meta.url).href
         },
         {
             name: "Thomas",
             role: "Responsable sécurité",
             comment: "J'ai été impressionné par l'efficacité du bracelet connecté et du service de gestion associé. Nous avons pu intervenir plus rapidement sur le terrain.",
-            photo: ""
+            photo: new URL("@/assets/images/thomas.webp", import.meta.url).href
         },
         {
             name: "Amélie",
             role: "Festivalière",
             comment: "Le bracelet m’a surprise par sa praticité. Il m’a permis de me repérer facilement sur le site et de retrouver mes amis en un clin d'œil.",
-            photo: ""
+            photo: new URL("@/assets/images/amelie.webp", import.meta.url).href
         }
     ]
 </script>
 
 <template>
     <section class="customers-section section-classic">
-        <HeroSecondary color="dark" align="left">Iels nous ont fait confiance</HeroSecondary>
+        <HeroSecondary color="dark" icon="primary" align="left">Iels nous ont fait confiance</HeroSecondary>
         <ul class="customers-list">
             <li class="customer-item" v-for="customer of customers">
-                <div class="ci-photo"></div>
-                <!-- <img :src="customer.photo" class="ci-photo" alt="photo client e" /> -->
+                <img :src="customer.photo" class="ci-photo" alt="photo client e" />
                 <div class="ci-content-card">
                     <h3 class="cicc-title">{{ customer.name }}</h3>
                     <p class="classic-txt cicc-role">({{ customer.role }})</p>
@@ -63,9 +62,6 @@
         .ci-photo {
             width: 240px;
             height: 245px;
-            border-radius: 50% 50% 20% 10%;
-            border: 2px solid $primary;
-            transform: rotate(-12deg);
             position: absolute;
             top: 0;
         }

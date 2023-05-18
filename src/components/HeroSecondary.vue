@@ -9,7 +9,9 @@ defineProps<{
 
 <template>
     <h2 :class="'hero-secondary __' + color + ' __bg-' + background + ' __align-' + align">
-        <Icon :icon="icon" />
+        <img v-if="icon === 'white'" class='hs-icon' src="@/assets/icons/pin-right-white.webp" alt="Icone de titre blanche" />
+        <img v-if="icon === 'dark'" class='hs-icon' src="@/assets/icons/pin-right-dark.webp" alt="Icone de titre blanche" />
+        <img v-if="icon === 'primary'" class='hs-icon' src="@/assets/icons/pin-right-primary.webp" alt="Icone de titre blanche" />
         <slot></slot>
     </h2>
 </template>
@@ -28,6 +30,12 @@ defineProps<{
         justify-content: center;
         padding: $space-m;
         border-radius: $radius-xxs;
+        .hs-icon {
+            padding-top: $space-xs;
+            height: $fsize-l;
+            width: auto;
+            margin-right: $space-m;
+        }
         /* text color */
         &.__classic {
             color: $dark;

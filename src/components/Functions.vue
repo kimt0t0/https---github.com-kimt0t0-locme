@@ -1,6 +1,7 @@
 <script lang="ts" setup>
     const functionalities : {
-        icon: String,
+        icon?: String,
+        homeIcon?: any,
         text: String
     }[] = [
         {
@@ -8,7 +9,7 @@
             text: 'Retrouvez vos amies malgré la saturation du réseau'
         },
         {
-            icon: 'wifi',
+            homeIcon: new URL("@/assets/icons/watch.webp", import.meta.url).href,
             text: 'Bracelet personnalisable avec 3 couleurs au choix'
         },
         {
@@ -28,15 +29,21 @@
 
 <template>
     <section class="section-functions">
-        <div class="sf-container">
-            <HeroSecondary color="white" background="classic">
-                Fonctionnalités et caractéristiques du bracelet
-            </HeroSecondary>
-            <ul class="functions-list">
-                <li class="fl-item" v-for="functionality in functionalities">
-                    <Icon :icon="functionality.icon" />{{ functionality.text }}
-                </li>
-            </ul>
+        <div class="sf-background-container">
+            <div class="sf-container">
+                <HeroSecondary color="white" icon="primary" background="classic">
+                    Fonctionnalités et caractéristiques du bracelet
+                </HeroSecondary>
+                <ul class="functions-list">
+                    <li class="fl-item" v-for="functionality in functionalities">
+                        <div class="fl-icon-container">
+                            <Icon v-if="functionality.icon" class="fl-icon" :icon="functionality.icon" />
+                            <img v-else class="fl-icon" :src="functionality.homeIcon" alt="icone illustrative" />
+                        </div>
+                        {{ functionality.text }}
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 </template>
@@ -44,12 +51,18 @@
 <style lang="scss">
     @use '@/styles/App.scss' as *;
     .section-functions {
+        height: fit-content;
         background-color: $dark;
-        padding: $space-l 0;
+        .sf-background-container {
+            background: url('@/assets/images/fest-crowd.webp') no-repeat;
+            background-position: left;
+            background-size: contain;
+        }
     }
     .sf-container {
         max-width: $classic-ctn;
         margin: 0 auto;
+        padding: $space-l 0;
     }
     .functions-list {
         box-sizing: border-box;
@@ -64,12 +77,21 @@
             display: flex;
             align-items: center;
             color: #fff;
-            svg {
+            .fl-icon-container {
+                background: url('@/assets/icons/mediator-primary.webp') no-repeat;
+                width: 50px;
+                height: 40px;
+                min-width: 50px;
+                min-height: 40px;
+                background-size: contain;
                 margin-right: $space-m;
-                padding: $space-s;
-                border-radius: 5px 50% 50% 15px;
-                background-color: $primary;
-                transform: rotate(-12deg);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .fl-icon {
+                    height: 1.5rem;
+                    width: auto;
+                }
             }
         }
     }

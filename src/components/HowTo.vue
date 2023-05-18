@@ -12,10 +12,10 @@
     <section class="how-to-section">
         <div class="htc-container">
             <div class="htc-content-bloc">
-                <HeroSecondary color="classic" align="left">Comment ça marche pour vos festivaliers ?</HeroSecondary>
+                <HeroSecondary color="classic" icon="primary" align="left">Comment ça marche pour vos festivaliers ?</HeroSecondary>
                 <ClassicList :listItems="listItems" />
             </div>
-            <div class="htc-illus"></div>
+            <img src="@/assets/images/bracelets-03.webp" class="htc-illus" alt="série de cinq bracelets LocMe"/>
         </div>
     </section>
 </template>
@@ -32,15 +32,18 @@
         .htc-container {
             display: flex;
             justify-content: space-between;
+            width: 100%;
             max-width: $classic-ctn;
             margin: 0 auto;
         }
         .htc-content-bloc {
-            width: 52%;
+            width: 55%;
             box-sizing: border-box;
         }
         .htc-illus {
-            width: 45%;
+            height: 100%;
+            width: auto;
+            max-width: 45%;
             box-sizing: border-box;
             background-color: $grey;
             position: absolute;

@@ -11,11 +11,10 @@
 <template>
     <section class="prezdashboard-section">
         <div class="pds-container">
-            <HeroSecondary color="white" align="left">Gérez la sécurité de vos festivalières directement depuis votre tableau de bord</HeroSecondary>
+            <HeroSecondary color="white" icon="white" align="left">Gérez la sécurité de vos festivalières directement depuis votre tableau de bord</HeroSecondary>
             <div class="pds-contents">
-                <div class="pds-illus"></div>
-                    <!-- <img src="" class="pds-illus" alt="Démonstration du tableau de bord LocMe" /> -->
-                    <ClassicList class="classic-list-cp" :title="listTitle" :listItems="listItems"/>
+                <img src="@/assets/images/dashboard-example.webp" class="pds-illus" alt="Démonstration du tableau de bord LocMe" />
+                <ClassicList class="classic-list-cp" :title="listTitle" :listItems="listItems"/>
             </div>
         </div>
 
@@ -44,6 +43,7 @@
         width: 55%;
         background-color: $grey;
         border-radius: $radius-xxs;
+        border: 1px solid #bfbfbf;
     }
     .classic-list-cp {
         width: 42%;

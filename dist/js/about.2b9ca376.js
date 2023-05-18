@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkfrontend"]=self["webpackChunkfrontend"]||[]).push([[443],{8583:function(n,t,c){c.r(t),c.d(t,{default:function(){return d}});var e=c(3396);const r={class:"contact"},a=(0,e._)("h1",null,"This is a contact page",-1),s=[a];function u(n,t){return(0,e.wg)(),(0,e.iD)("div",r,s)}var o=c(89);const f={},i=(0,o.Z)(f,[["render",u]]);var d=i}}]);
-//# sourceMappingURL=about.2b9ca376.js.map

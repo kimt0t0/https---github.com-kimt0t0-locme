@@ -37,6 +37,7 @@
         align-items: center;
         .cta {
             margin-top: $space-m;
+            font-weight: 200;
         }
     }
 </style>

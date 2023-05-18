@@ -36,7 +36,7 @@ defineProps<{
         color: #fff;
         &:hover, &:focus {
             background-color: #fff;
-            color: $primary;
+            color: darken($primary, 20%);
         }
     }
     &.__transparent {   

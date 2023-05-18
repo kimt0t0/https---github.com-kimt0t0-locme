@@ -22,6 +22,7 @@ defineProps<{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     border: transparent;
     border-radius: $radius-s;
     transition: all 300ms ease-in;
@@ -56,12 +57,10 @@ defineProps<{
 
         &:hover,
         &:focus {
-            background-color: $primary;
-            color: #fff;
+            color: $primary;
 
-            >svg {
-                color: #fff;
-                background-color: $primary;
+            >svg, >.icon {
+                color: $primary;
             }
         }
     }

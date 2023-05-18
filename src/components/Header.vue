@@ -6,11 +6,10 @@
     <header class="header">
         <img class="logo" src="@/assets/logo.svg" alt="logo">
         <Navbar />
-        <Button class="user-btn" color="transparent" size="medium">
-            <Icon icon="user" />
-            <!-- <img src="@/assets/icons/profile.svg" class="icon user-icon" alt="icone utilisateur" /> -->
+        <ButtonLink path="/connexion" class="user-btn" color="transparent" size="medium">
+            <div class="icon user-icon"></div>
             Se connecter / S'inscrire
-        </Button>
+        </ButtonLink>
     </header >
 </template>
 
@@ -33,11 +32,23 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        > svg, .user-icon {
+        transition: all 300ms ease-in;
+        > .user-icon {
+            box-sizing: border-box;
+            width: 100%;
+            height: 35px;
+            background: url('@/assets/icons/profil-dark.webp') no-repeat;
+            background-size: contain;
+            background-position: 45%;
             padding: $space-s;
             border-radius: $radius-circle;
-            background-color: $dark;
-            color: white;
+        }
+        &:hover, &:focus {
+            > .user-icon {
+                background: url('@/assets/icons/profil-primary.webp') no-repeat;
+                background-size: contain;
+                background-position: 45%;
+            }
         }
     }
 }

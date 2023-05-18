@@ -17,12 +17,11 @@
 <template>
     <section class="prezfind-section">
         <div class="pf-container">
-            <HeroSecondary color="dark" align="left">Repérez vos festivaliers sur la carte durant l'événement</HeroSecondary>
+            <HeroSecondary color="dark" icon="primary" align="left">Repérez vos festivaliers sur la carte durant l'événement</HeroSecondary>
             <p class="classic-txt" v-for="paragraph of paragraphs">
                 {{ paragraph }}
             </p>
-            <div class="pf-illus"></div>
-            <!-- <img class="pf-illus" src="" alt="exemple de localisation depuis l'interface LocMe" /> -->
+            <img class="pf-illus" src="@/assets/images/dashboard-home-example.webp" alt="exemple de localisation depuis l'interface LocMe" />
             <div class="pf-content-bloc">
                 <h3 class="pfcc-title">Système d'alerte</h3>
                 <NumberedList title="En cas d'alerte" :listItems="listItems" />
@@ -44,11 +43,11 @@
     }
     
     .pf-illus {
-        max-width: $classic-ctn;
+        width: $classic-ctn;
         height: 500px;
         object-fit: contain;
         border-radius: $radius-xxs;
-        border: 2px solid $grey;
+        border: 1px solid #bfbfbf;
         background-color: $primary;
         margin: $space-l auto;
     }
