@@ -10,7 +10,7 @@
         <h4 class="cl-title">{{ title }}</h4>
         <ul class="classic-list">
             <li class="cl-item" v-for="item of listItems">
-                <div class="icon"></div>
+                <img src="@/assets/icons/mediator-dark.webp" class="list-item-icon" alt="Icone de début de liste" />
                 {{  item  }}
             </li>
         </ul>
@@ -27,15 +27,12 @@
     .cl-item {
         display: flex;
         margin: $space-m auto;
-        .icon {
+        .list-item-icon {
             box-sizing: border-box;
             margin: $space-s;
             min-width: 30px;
             width: 30px;
-            height: 20px;
-            border-radius: 5px 50% 50% 15px;
-            background-color: $dark;
-            transform: rotate(-12deg);
+            height: 1.2rem;
         }
     }
 </style>

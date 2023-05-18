@@ -10,7 +10,6 @@ defineProps<{
         <h4 class="nl-title">{{ title }}</h4>
         <ol class="numbered-list">
             <li class="nl-item" v-for="item of listItems">
-                <!-- <div class="icon"></div> -->
                 {{ item }}
             </li>
         </ol>
@@ -37,16 +36,19 @@ defineProps<{
     &::before {
         display: flex;
         justify-content: center;
+        align-items: center;
         content: counter(item);
         counter-increment: item;
         box-sizing: border-box;
         margin: $space-s;
         min-width: 35px;
-        width: 35px;
-        height: 30px;
-        border-radius: 5px 50% 50% 15px;
-        background-color: $primary;
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
         color: #fff;
+        background: url("@/assets/icons/mediator-custom.webp") no-repeat;
+        background-size: contain;
     }
 }
 </style>

@@ -3,6 +3,8 @@
 import { createApp } from 'vue'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUser, faGlobe, faWifi } from '@fortawesome/free-solid-svg-icons'
+// import { } from '@fortawesome/free-regular-svg-icons'
+// import { } from '@fortawesome/free-brands-svg-icons'
 // Internal
 import App from './App.vue'
 import './registerServiceWorker'

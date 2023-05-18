@@ -1,27 +1,26 @@
 <script lang="ts" setup>
     const functionalities : {
-        icon?: String,
-        homeIcon?: any,
+        icon?: any,
         text: String
     }[] = [
         {
-            icon: 'wifi',
+            icon: new URL("@/assets/icons/wifi.webp", import.meta.url).href,
             text: 'Retrouvez vos amies malgré la saturation du réseau'
         },
         {
-            homeIcon: new URL("@/assets/icons/watch.webp", import.meta.url).href,
+            icon: new URL("@/assets/icons/watch.webp", import.meta.url).href,
             text: 'Bracelet personnalisable avec 3 couleurs au choix'
         },
         {
-            icon: 'wifi',
+            icon: new URL("@/assets/icons/bolt.webp", import.meta.url).href,
             text: 'Autonomie prolongée pour couvrir toute la durée du festival'
         },
         {
-            icon: 'wifi',
+            icon: new URL("@/assets/icons/umbrella.webp", import.meta.url).href,
             text: "Résistant à l'eau, aux chocs et à l'usure pour résister aux conditions difficiles d'un festival"
         },
         {
-            icon: 'wifi',
+            icon: new URL("@/assets/icons/mobile-os.webp", import.meta.url).href,
             text: 'Compatible Android et iOS'
         }
     ]
@@ -37,8 +36,7 @@
                 <ul class="functions-list">
                     <li class="fl-item" v-for="functionality in functionalities">
                         <div class="fl-icon-container">
-                            <Icon v-if="functionality.icon" class="fl-icon" :icon="functionality.icon" />
-                            <img v-else class="fl-icon" :src="functionality.homeIcon" alt="icone illustrative" />
+                            <img class="fl-icon" :src="functionality.icon" alt="icone illustrative" />
                         </div>
                         {{ functionality.text }}
                     </li>
