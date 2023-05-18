@@ -1,12 +1,13 @@
 <script lang="ts" setup>
 defineProps<{
     color: string,
-    size: string
+    size: string,
+    type?: "button" | "submit" | "reset" | undefined
 }>()
 </script>
 
 <template>
-    <button :class="'btn __'+ color + ' __' + size">
+    <button :type="type" :class="'btn __'+ color + ' __' + size">
         <slot></slot>
     </button>
 </template>
@@ -50,6 +51,15 @@ defineProps<{
             }
         }
     }
+    &.__transparent-white {
+        color: #fff;
+        background-color: transparent;
+        border: 1px solid transparent;
+        &:hover, &:focus {
+            border: 1px solid $primary;
+            color: $primary;
+        }
+    }
     /* Sizes */
     &.__small {
         font-size: $fsize-xs;
@@ -66,6 +76,20 @@ defineProps<{
     &.__bigger {
         font-size: $fsize-l;
         padding: $space-m $space-l;
+    }
+    &.__dropdown {
+        border-radius: $radius-xxs;
+        font-size: $fsize-s;
+        padding: $space-m;
+        margin: $space-m 0;
+        width: 420px;
+    }
+    &.__dropdown-large {
+        border-radius: $radius-xxs;
+        font-size: $fsize-s;
+        padding: $space-m;
+        margin: $space-m 0;
+        width: $classic-ctn;
     }
 }
 </style>

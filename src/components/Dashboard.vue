@@ -14,7 +14,8 @@
             firstName: "Laurent",
             lastName: "Cizielsky",
             email: "lc-orga@hellfest.fr",
-            phone: "06 70 34 56 78"
+            phone: "06 70 34 56 78",
+            role: "ORGANIZER"
         }
     )
 </script>
@@ -27,13 +28,14 @@
             <!-- Form headline -->
             <div class="edit-headline">
                 <button v-if="!editForm" @click="toggleForm" type="button" class="db-edit-btn">
-                    <Icon name="pen" />
+                    <Icon icon="pencil" />
                     Modifier
                 </button>
                 <button v-else @click="toggleForm" type="button" class="db-edit-btn">
-                    <Icon name="xmark" />
+                    <Icon icon="xmark" />
                     Annuler
                 </button>
+            </div>
                 <!-- Form contents -->
                 <!-- (business) -->
                 <div class="dbf-line" v-if="userProfile.business">
@@ -66,7 +68,12 @@
                         <p v-else class="dbfl-txt">{{ userProfile.phone }}</p>
                 </div>
                 <!-- Form submit -->
-            </div>
+                <div v-if="editForm" class="form-submit-ctn">
+                    <Button class="fsc-btn" color="primary" size="medium" type="submit">
+                        <Icon icon="floppy-disk" />
+                        Enregistrer les modifications
+                    </Button>
+                </div>
         </form>
     </div>
 </template>
@@ -76,8 +83,9 @@
 
     .dashboard-box {
         box-sizing: border-box;
-        width: 40%;
-        padding: $space-l;
+        min-width: 500px;
+        width: 100%;
+        padding: $space-xxl $space-xl;
         background-color: #000;
         border-radius: $radius-xxs;
     }
@@ -89,5 +97,72 @@
         color: $primary;
         text-transform: uppercase;
         font-size: $fsize-m;
+    }
+
+    /* FORM */
+    .db-form {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: $space-xxl 0 0;
+        /* Form - headline */
+        .edit-headline {
+            display: flex;
+            justify-content: flex-end;
+        }
+        /* Form - content */
+        .dbf-line {
+            display: flex;
+            color: #fff;
+            font-size: $fsize-xs;
+            margin: $space-m;
+            .dbfl-label {
+                font-weight: 700;
+                width: 120px;
+            }
+            .dbfl-input {
+                background-color: $dark;
+                color: #fff;
+                border: 2px solid darken($dark, 15%);
+                border-radius: $radius-xs;
+                padding: $space-xs $space-s;
+            }
+        }
+    }
+
+    /* Buttons */
+    /* (edit) */
+    .db-edit-btn {
+        box-sizing: border-box;
+        min-width: 60px;
+        min-height: 60px;
+        padding: $space-s;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: $radius-s;
+        cursor: pointer;
+        transition: all 300ms ease-in;
+        >svg {
+            height: 18px;
+            margin-bottom: $space-xs;
+        }
+        &:hover, &:focus {
+            color: $primary;
+            border: 1px solid $primary;
+        }
+    }
+    /* (submit) */
+    .form-submit-ctn {
+        margin-top: $space-xl;
+        display: flex;
+        justify-content: center;
+        .fsc-btn > svg {
+            margin-right: $space-s;
+        }
     }
 </style>
