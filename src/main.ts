@@ -24,6 +24,7 @@ import DashboardTeams from '@/components/DashboardTeams.vue'
 import Functions from '@/components/Functions.vue'
 import HeroSecondary from '@/components/HeroSecondary.vue'
 import HowTo from '@/components/HowTo.vue'
+import MapSection from '@/components/MapSection.vue'
 import NumberedList from '@/components/NumberedList.vue'
 import PrezDashboard from '@/components/PrezDashboard.vue'
 import PrezFind from '@/components/PrezFind.vue'
@@ -56,6 +57,7 @@ app.component('Icon', FontAwesomeIcon)
   .component('Functions', Functions)
   .component('HeroSecondary', HeroSecondary)
   .component('HowTo', HowTo)
+  .component('MapSection', MapSection)
   .component('NumberedList', NumberedList)
   .component('PrezDashboard', PrezDashboard)
   .component('PrezFind', PrezFind)

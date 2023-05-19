@@ -98,7 +98,7 @@ defineProps<{
         border-radius: $radius-xxs;
         font-size: $fsize-s;
         padding: $space-m;
-        margin: $space-l 0 0;
+        margin: 0;
         width: 420px;
         &.inbox {
             text-transform: uppercase;

@@ -133,6 +133,7 @@
             </div>
         </section>
         <!-- Map section -->
+        <MapSection />
 </template>
 
 <style lang="scss">
@@ -175,6 +176,8 @@
         width: fit-content;
         height: fit-content;
         min-height: fit-content;
+        border: 2px solid $grey;
+        margin: $space-m 0;
         &.__subbloc {
             width: 100%;
         }
