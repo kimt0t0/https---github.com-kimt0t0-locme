@@ -3,7 +3,7 @@
 import { createApp } from 'vue'
 // import { createPinia } from 'pinia'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faGlobe, faXmark, faPencil, faFloppyDisk, faSortDown } from '@fortawesome/free-solid-svg-icons'
+import { faGlobe, faXmark, faPencil, faFloppyDisk, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
 // import { } from '@fortawesome/free-regular-svg-icons'
 // import { } from '@fortawesome/free-brands-svg-icons'
 // Internal
@@ -19,6 +19,8 @@ import ClassicList from '@/components/ClassicList.vue'
 import CtaBloc from '@/components/CtaBloc.vue'
 import Customers from '@/components/Customers.vue'
 import Dashboard from '@/components/Dashboard.vue'
+import DashboardOrder from '@/components/DashboardOrders.vue'
+import DashboardTeams from '@/components/DashboardTeams.vue'
 import Functions from '@/components/Functions.vue'
 import HeroSecondary from '@/components/HeroSecondary.vue'
 import HowTo from '@/components/HowTo.vue'
@@ -30,7 +32,7 @@ import Socials from '@/components/Socials.vue'
 
 // LOGIC
 // add icons to app library
-library.add(faGlobe, faXmark, faPencil, faFloppyDisk, faSortDown)
+library.add(faGlobe, faXmark, faPencil, faFloppyDisk, faSortDown, faSortUp)
 
 // create app
 const app = createApp(App)
@@ -48,6 +50,8 @@ app.component('Icon', FontAwesomeIcon)
   .component('CtaBloc', CtaBloc)
   .component('Customers', Customers)
   .component('Dashboard', Dashboard)
+  .component('DashboardOrder', DashboardOrder)
+  .component('DashboardTeams', DashboardTeams)
   .component('Functions', Functions)
   .component('HeroSecondary', HeroSecondary)
   .component('HowTo', HowTo)

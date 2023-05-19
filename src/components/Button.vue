@@ -37,7 +37,7 @@ defineProps<{
         color: #fff;
         &:hover, &:focus {
             background-color: #fff;
-            color: darken($primary, 20%);
+            color: darken($primary, 20%) !important;
         }
     }
     &.__transparent {   
@@ -60,6 +60,10 @@ defineProps<{
             color: $primary;
         }
     }
+    &.__white {
+            background-color: #fff;
+            color: darken($primary, 20%);
+    }
     /* Sizes */
     &.__small {
         font-size: $fsize-xs;
@@ -81,8 +85,11 @@ defineProps<{
         border-radius: $radius-xxs;
         font-size: $fsize-s;
         padding: $space-m;
-        margin: $space-m 0;
+        margin: $space-l 0 0;
         width: 420px;
+        &.inbox {
+            width: 100%;
+        }
     }
     &.__dropdown-large {
         border-radius: $radius-xxs;
