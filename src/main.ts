@@ -29,6 +29,7 @@ import PrezDashboard from '@/components/PrezDashboard.vue'
 import PrezFind from '@/components/PrezFind.vue'
 import Reassurance from '@/components/Reassurance.vue'
 import Socials from '@/components/Socials.vue'
+import TeamList from '@/components/TeamList.vue'
 
 // LOGIC
 // add icons to app library
@@ -60,6 +61,7 @@ app.component('Icon', FontAwesomeIcon)
   .component('PrezFind', PrezFind)
   .component('Reassurance', Reassurance)
   .component('Socials', Socials)
+  .component('TeamList', TeamList)
 
 // mount app
 app.mount('#app')

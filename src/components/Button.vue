@@ -3,11 +3,12 @@ defineProps<{
     color: string,
     size: string,
     type?: "button" | "submit" | "reset" | undefined
+    state?: string
 }>()
 </script>
 
 <template>
-    <button :type="type" :class="'btn __'+ color + ' __' + size">
+    <button :type="type" :class="'btn __'+ color + ' __' + size + ' __' + state">
         <slot></slot>
     </button>
 </template>
@@ -38,6 +39,18 @@ defineProps<{
         &:hover, &:focus {
             background-color: #fff;
             color: darken($primary, 20%) !important;
+        }
+        &.__teams-dropdown {
+            font-weight: 800;
+            &:hover, &:focus, &.active {
+                background-color: lighten($primary, 42%);
+            }
+        }
+        &.__fest-dropdown, &.active {
+            font-weight: 800;
+            &:hover, &:focus {
+                background-color: #f1f1f1;
+            }
         }
     }
     &.__transparent {   
@@ -88,14 +101,18 @@ defineProps<{
         margin: $space-l 0 0;
         width: 420px;
         &.inbox {
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            font-weight: 800;
             width: 100%;
         }
     }
     &.__dropdown-large {
+        font-weight: 800;
         border-radius: $radius-xxs;
         font-size: $fsize-s;
         padding: $space-m;
-        margin: $space-m 0;
+        margin: $space-m 0 0;
         width: $classic-ctn;
     }
 }
