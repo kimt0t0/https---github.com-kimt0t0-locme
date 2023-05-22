@@ -3,12 +3,13 @@ defineProps<{
     color: string,
     size: string,
     type?: "button" | "submit" | "reset" | undefined
-    state?: string
+    state?: string,
+    align?: string
 }>()
 </script>
 
 <template>
-    <button :type="type" :class="'btn __'+ color + ' __' + size + ' __' + state">
+    <button :type="type" :class="'btn __'+ color + ' __' + size + ' __' + state + ' __' + align">
         <slot></slot>
     </button>
 </template>
@@ -25,6 +26,12 @@ defineProps<{
     border-radius: $radius-s;
     cursor: pointer;
     transition: all 300ms ease-in;
+
+    /* Align */
+    &.__left {
+        justify-content: flex-start;
+        text-align: left;
+    }
     /* Colors */
     &.__classic {
         background-color: $dark;
@@ -64,18 +71,29 @@ defineProps<{
             }
         }
     }
+
     &.__transparent-white {
-        color: #fff;
+        font-size: $fsize-xs;
         background-color: transparent;
+        color: #fff;
         border: 1px solid transparent;
         &:hover, &:focus {
-            border: 1px solid $primary;
             color: $primary;
+            border: 1px solid $primary;
+            >svg, >.icon {
+                color: $primary;
+            }
         }
     }
     &.__white {
             background-color: #fff;
-            color: darken($primary, 20%);
+            color: $dark;
+            border: 1px solid transparent;
+            &:hover, &:focus {
+                border: 1px solid #fff;
+                color: #fff;
+                background-color: transparent;
+            }
     }
     /* Sizes */
     &.__small {

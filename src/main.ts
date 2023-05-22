@@ -3,7 +3,7 @@
 import { createApp } from 'vue'
 // import { createPinia } from 'pinia'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faGlobe, faXmark, faPencil, faFloppyDisk, faSortDown, faSortUp } from '@fortawesome/free-solid-svg-icons'
+import { faGlobe, faXmark, faPencil, faFloppyDisk, faSortDown, faSortUp, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 // import { } from '@fortawesome/free-regular-svg-icons'
 // import { } from '@fortawesome/free-brands-svg-icons'
 // Internal
@@ -34,7 +34,7 @@ import TeamList from '@/components/TeamList.vue'
 
 // LOGIC
 // add icons to app library
-library.add(faGlobe, faXmark, faPencil, faFloppyDisk, faSortDown, faSortUp)
+library.add(faGlobe, faXmark, faPencil, faFloppyDisk, faSortDown, faSortUp, faLocationDot)
 
 // create app
 const app = createApp(App)

@@ -2,13 +2,14 @@
 defineProps<{
     color: string,
     size: string,
-    path: string
+    path: string,
+    align?: string
 }>()
 </script>
 
 <template>
     <RouterLink 
-    :class="'btn __' + color + ' __' + size"
+    :class="'btn __' + color + ' __' + size + ' __' + align"
     :to="path">
         <slot></slot>
     </RouterLink>
@@ -27,6 +28,12 @@ defineProps<{
     border-radius: $radius-s;
     transition: all 300ms ease-in;
     text-decoration: none;
+
+    /* align */
+    &.__left {
+        justify-content: flex-start;
+        text-align: left;
+    }
 
     /* Colors */
     &.__classic {
@@ -54,6 +61,21 @@ defineProps<{
         font-size: $fsize-xs;
         background-color: transparent;
         color: $dark;
+
+        &:hover,
+        &:focus {
+            color: $primary;
+
+            >svg, >.icon {
+                color: $primary;
+            }
+        }
+    }
+
+     &.__transparent-white {
+        font-size: $fsize-xs;
+        background-color: transparent;
+        color: #fff;
 
         &:hover,
         &:focus {
