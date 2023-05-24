@@ -52,3 +52,41 @@ li {
         text-decoration: none;
     }
 }
+
+.form-input {
+    box-sizing: border-box;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    padding: $space-xs;
+    border: 1px solid $grey;
+    border-radius: $radius-s;
+    font-size: $fsize-s;
+    > input {
+        font-size: $fsize-s;
+        border: 1px solid transparent;
+        margin: 0;
+    }
+    > button {
+        cursor: pointer;
+        background-color: transparent;
+        border: 1px solid transparent;
+        border-radius: $radius-s;
+        color: $grey;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 60px;
+        height: 60px;
+        transition: all 200ms ease-in;
+        &:hover, &:focus {
+            border: 1px solid $primary;
+            color: $primary;
+        }
+        > svg {
+            height: 20px;
+        }
+    }
+}

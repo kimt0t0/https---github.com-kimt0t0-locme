@@ -8,7 +8,7 @@
         <img class="logo" src="@/assets/logo.svg" alt="logo">
         <Navbar />
         <!-- If user disconnected -->
-        <ButtonLink path="/mon-compte" class="user-btn" color="transparent" size="medium">
+        <ButtonLink path="/connexion" class="user-btn" color="transparent" size="medium">
                 <div class="icon user-icon"></div>
                 Se connecter / S'inscrire
             </ButtonLink>

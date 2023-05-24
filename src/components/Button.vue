@@ -105,8 +105,8 @@ defineProps<{
         padding: $space-s $space-m;
     }
     &.__large {
-        font-size: $fsize-m;
-        padding: $space-m $space-l;
+        font-size: $fsize-s;
+        padding: $space-m $space-xxl;
     }
     &.__bigger {
         font-size: $fsize-l;

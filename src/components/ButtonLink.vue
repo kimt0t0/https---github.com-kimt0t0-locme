@@ -107,4 +107,12 @@ defineProps<{
         font-size: $fsize-l;
         padding: $space-m $space-l;
     }
+
+    &.__square {
+        width: 340px;
+        height: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }</style>
