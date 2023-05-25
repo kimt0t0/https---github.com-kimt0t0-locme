@@ -43,9 +43,11 @@ defineProps<{
     &.__primary {
         background-color: $primary;
         color: #fff;
+        border: 1px solid transparent;
         &:hover, &:focus {
             background-color: #fff;
             color: darken($primary, 20%) !important;
+            border: 1px solid darken($primary, 20%);
         }
         &.__teams-dropdown {
             font-weight: 800;

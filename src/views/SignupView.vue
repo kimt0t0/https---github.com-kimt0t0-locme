@@ -54,8 +54,24 @@
                     <div class="sff-btn-ctn">
                         <Button type="button" color="white" class="add-festival" @click="addFestival">+</Button>
                     </div>
-                    <div v-for="index of festivalsCounter" class="sff-line">
-                        <label class="form-label">Nom du festival:</label>
+                    <div v-for="index of festivalsCounter" class="sff-group">
+                        <h2 class="form-subtitle">Festival n°{{ index }}</h2>
+                        <div class="sf-line">
+                            <div class="sf-input-group">
+                                <label class="form-label __small" :for="'festName-' + index">Nom du festival:</label>
+                                <input class="form-input __small" :id="'festName-' + index" placeholder="nom du festival" />
+                            </div>
+                        </div>
+                        <div class="sf-line">
+                            <div class="sf-input-group">
+                                <label class="form-label __small" :for="'festStart-' + index">Date de début:</label>
+                                <input type="date" class="form-input __small" :id="'festStart-' + index" placeholder="nom du festival" />
+                            </div>
+                            <div class="sf-input-group">
+                                <label class="form-label __small" :for="'festEnd-' + index">Date de fin:</label>
+                                <input type="date" class="form-input __small" :id="'festEnd-' + index" placeholder="nom du festival" />
+                            </div>
+                        </div>
 
                     </div>
                 </div>
