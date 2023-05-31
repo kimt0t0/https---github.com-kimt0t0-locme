@@ -54,8 +54,15 @@
                     <div class="sff-btn-ctn">
                         <Button type="button" color="white" class="add-festival" @click="addFestival">+</Button>
                     </div>
-                    <div v-for="index of festivalsCounter" class="sff-group">
-                        <h2 class="form-subtitle">Festival n°{{ index }}</h2>
+                    <div v-for="index of festivalsCounter" class="sff-group" :id="'sffestival_'  + index">
+                        <div class="ssf-headline">
+                            <h2 class="form-subtitle">Festival n°{{ index }}</h2>
+                            <div class="sf-input-group __removal">
+                                <Button color="primary" size="medium" type="button">
+                                    <Icon icon="trash" />
+                                </Button>
+                            </div>
+                        </div>
                         <div class="sf-line">
                             <div class="sf-input-group">
                                 <label class="form-label __small" :for="'festName-' + index">Nom du festival:</label>
@@ -114,6 +121,19 @@
         margin: $space-l 0;
     }
 
+    .sff-group {
+        box-sizing: border-box;
+        background-color: lighten($primary, 35%);
+        padding: $space-m $space-l;
+        margin: $space-m auto;
+        border-radius: $radius-xs;
+    }
+
+    .ssf-headline {
+        display: flex;
+        justify-content: space-between;
+    }
+
     .sf-line {
         display: flex;
         justify-content: space-between;
@@ -122,5 +142,10 @@
     .sf-input-group {
         margin: $space-m $space-l $space-m 0;
         width: 350px;
+        &.__removal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
     }
 </style>

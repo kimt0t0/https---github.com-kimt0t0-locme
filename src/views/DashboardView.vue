@@ -176,8 +176,10 @@
         width: fit-content;
         height: fit-content;
         min-height: fit-content;
-        border: 2px solid $grey;
         margin: $space-m 0;
+        &.__with-border {
+            border: 2px solid $grey;
+        }
         &.__subbloc {
             width: 100%;
         }

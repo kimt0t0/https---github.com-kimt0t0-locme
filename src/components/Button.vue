@@ -93,7 +93,6 @@ defineProps<{
             border: 1px solid transparent;
             &:hover, &:focus {
                 border: 1px solid #fff;
-                color: #fff;
                 background-color: transparent;
             }
     }
@@ -132,7 +131,7 @@ defineProps<{
         border-radius: $radius-xxs;
         font-size: $fsize-s;
         padding: $space-m;
-        margin: $space-m 0 0;
+        margin: 0 0;
         width: $classic-ctn;
     }
 }

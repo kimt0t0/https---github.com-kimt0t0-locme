@@ -39,7 +39,7 @@
 
 <template>
     <div class="dropdown-content-box __orders">
-        <div class="dropdown-bloc __subbloc" v-for="order of orders">
+        <div class="dropdown-bloc __with-border __subbloc" v-for="order of orders">
             <Button class="dropdown-btn" color="white" size="dropdown inbox" type="button" @click="showContent === order.id ? setShowContent(-10) : setShowContent(order.id)">
                 Festival du {{ order.date_start.toLocaleDateString() }}
                 <Icon icon="sort-down" id="devis-dd-icon" />
