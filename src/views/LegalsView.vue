@@ -70,6 +70,12 @@
         }
     }
 
+    .legals-txt {
+        &.__owner {
+            color: lighten($dark, 10%);
+        }
+    }
+
     .legals-ter-title, .content-group {
         margin: $space-l 0;
     }

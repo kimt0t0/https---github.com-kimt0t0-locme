@@ -10,8 +10,8 @@
         path: '/confidentialite'
         },
     {
-        title: 'FAQ',
-        path: '/faq'
+        title: 'Conditions générales de vente',
+        path: '/cguv'
     }
     
     ]

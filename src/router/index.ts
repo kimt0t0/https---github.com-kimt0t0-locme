@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import AboutView from '@/views/AboutView.vue'
+import ConditionsView from '@/views/ConditionsView.vue'
 import DashboardView from '@/views/DashboardView.vue'
 import LegalsView from '@/views/LegalsView.vue'
+import PrivacyView from '@/views/PrivacyView.vue'
 import SignupView from '@/views/SignupView.vue'
 import UserView from '@/views/UserView.vue'
 
@@ -41,6 +43,16 @@ const routes = [
     path: '/mentions-legales',
     name: 'mentions legales',
     component: LegalsView
+  },
+  {
+    path: '/confidentialite',
+    name: ' confidentialite',
+    component: PrivacyView
+  },
+  {
+    path: '/cguv',
+    name: 'cguv',
+    component: ConditionsView
   }
 ]
 
