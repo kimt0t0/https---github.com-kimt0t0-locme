@@ -53,6 +53,15 @@
     .rs-list {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: $bp-l) {
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        @media (max-width: $bp-s) {
+            flex-direction: column;
+        }
         .reassurance-card {
             box-sizing: border-box;
             width: 220px;
@@ -60,6 +69,12 @@
             display: flex;
             align-items: center;
             flex-direction: column;
+            
+            @media (max-width: $bp-s) {
+                width: 100%;
+                height: 200px;
+            }
+
             .rc-icon {
                 width: 112px;
                 height: 112px;
@@ -76,6 +91,12 @@
             .rc-text {
                 width: 100%;
                 font-size: 0.85rem;
+
+                @media (max-width: $bp-s) {
+                    font-size: 1;
+                    text-align: center;
+                }
+
             }
         }
     }

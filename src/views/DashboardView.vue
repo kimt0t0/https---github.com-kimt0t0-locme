@@ -114,7 +114,7 @@
                             <Icon icon="sort-down" id="devis-dd-icon" />
                         </Button>
                         <div class="content-container">
-                            <div v-if="showBid" class="dropdown-content-box">2</div>
+                            <div v-if="showBid" class="dropdown-content-box">Fonctionnalité en attente...</div>
                         </div>
                     </div>
                 </div>

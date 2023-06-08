@@ -55,6 +55,12 @@
             background: url('@/assets/images/fest-crowd.webp') no-repeat;
             background-position: left;
             background-size: contain;
+
+            @media (max-width: $bp-m) {
+                background: none;
+                padding: $space-l $space-s;
+            }
+
         }
     }
     .sf-container {
@@ -67,6 +73,10 @@
         display: flex;
         flex-direction: column;
         align-items: flex-end;
+
+        @media (max-width: $bp-m) {
+            align-items: flex-start;
+        }
         
         .fl-item {
             box-sizing: border-box;
@@ -75,6 +85,10 @@
             display: flex;
             align-items: center;
             color: #fff;
+
+            @media (max-width: $bp-m) {
+                width: auto;
+            }
             .fl-icon-container {
                 background: url('@/assets/icons/mediator-primary.webp') no-repeat;
                 width: 50px;

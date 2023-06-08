@@ -35,6 +35,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: $bp-s) {
+        flex-direction: column;
+        height: fit-content;
+        align-items: flex-start;
+        width: 100%;
+    }
+
     .logo {
         width: 100px;
     }
@@ -54,13 +62,28 @@
             background-position: 45%;
             padding: $space-s;
             border-radius: $radius-circle;
+
+            @media (max-width: $bp-s) {
+                background-position: center;
+            }
+
         }
         &:hover, &:focus {
             > .user-icon {
                 background: url('@/assets/icons/profil-primary.webp') no-repeat;
                 background-size: contain;
                 background-position: 45%;
+
+                @media (max-width: $bp-s) {
+                    background-position: center;
+                }
+                
             }
+        }
+
+        @media (max-width: $bp-s) {
+            min-width: 100%;
+            display: flex;
         }
     }
 }

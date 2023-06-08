@@ -11,6 +11,14 @@
 <style lang="scss">
 @use '@/styles/App.scss' as *;
 
+.navbar {
+    @media (max-width: $bp-s) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
 .navlink {
     text-decoration: none;
     color: $dark;
@@ -18,6 +26,11 @@
     margin: 0 $space-m;
     &:hover, &:focus {
         text-decoration: underline;
+    }
+
+    @media (max-width: $bp-s) {
+        width: 100%;
+        text-align: center;
     }
 }
 </style>

@@ -76,6 +76,10 @@
             font-weight: 800;
             max-width: 260px;
             margin-bottom: $space-s;
+
+            @media (max-width: $bp-m) {
+                margin: $space-m 0;
+            }
         }
     }
 }
