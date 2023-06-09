@@ -96,11 +96,13 @@ defineProps<{
     &.__medium {
         font-size: $fsize-s;
         padding: $space-s $space-m;
+        width: fit-content;
     }
 
     &.__large {
         font-size: $fsize-m;
-        padding: $space-m $space-l;
+        padding: $space-m $space-xxl;
+        width: fit-content;
     }
 
     &.__bigger {

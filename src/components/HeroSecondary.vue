@@ -28,7 +28,7 @@ defineProps<{
         width: fit-content;
         display: flex;
         justify-content: center;
-        padding: $space-m;
+        padding: $space-m $space-m $space-m 0;
         border-radius: $radius-xxs;
         .hs-icon {
             padding-top: $space-xs;
