@@ -121,7 +121,7 @@
             </div>
             <div class="classic-section teams-section">
                 <!-- ((( teams large dropdown))) -->
-                <div class="dropdown-bloc">
+                <div class="dropdown-bloc __larger">
                     <Button class="dropdown-btn __large" color="primary" size="dropdown-large" type="button" @click="toggleTeams">
                         Mes équipes
                         <Icon icon="sort-down" id="devis-dd-icon" />
@@ -177,6 +177,9 @@
         height: fit-content;
         min-height: fit-content;
         margin: $space-m 0;
+        &.__larger {
+            width: 90%;
+        }
         &.__with-border {
             border: 2px solid $grey;
         }
@@ -211,6 +214,9 @@
         position: relative;
         display: flex;
         align-items: center;
+        &.__large {
+            width: 100% !important;
+        }
         > svg {
             width: 15px;
             height: 25px;

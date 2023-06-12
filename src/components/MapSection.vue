@@ -20,16 +20,15 @@
             latitude: -2,
             longitude: -3,
             alertActive: true,
-            alertDetails: [
+            alertDetails:
                 {
-                    date: new Date(),
+                    date: new Date(2023, 6, 13, 8, 22, 45),
                     latitude: -2,
                     longitude: -4,
                     type: 'VIOLENCE',
                     urgent: true,
-                    status: 'pending'
+                    status: 'PENDING'
                 }
-            ]
         },
         {
             id: 3,
@@ -39,16 +38,15 @@
             latitude: 2,
             longitude: 5,
             alertActive: false,
-            alertDetails: [
+            alertDetails:
                 {
-                    date: new Date(2023-6-12, 22, 3, 56),
+                    date: new Date(2023, 6, 12, 22, 3, 56),
                     latitude: 0,
                     longitude: 0,
                     type: 'HEALTH',
                     urgent: false,
                     status: 'over'
                 }
-            ]
         }
     ])
 
@@ -122,6 +120,37 @@
                 console.log('Utilisation non prévue !');
         }
     }
+
+    // Get alert type
+    const getAlertType = (type: string) => { // add an enum here
+        console.log(type);
+        switch (type) {
+            case 'HEALTH':
+                return 'Santé';
+            case 'VIOLENCE':
+                return 'Agression';
+            case 'OTHER':
+                return 'Autre';
+            default:
+                return "Cas non prévu par l'application";
+        }
+    }
+
+    // Get alert status
+    const getAlertStatus = (status: string) => { // add an enum here
+        switch (status) {
+            case 'PENDING':
+                return 'En attente !';
+            case 'REFUSED':
+                return "Sans intervention";
+            case 'ONGOING':
+                return 'Prise en charge';
+            case 'OVER':
+                return 'Terminée'
+            default:
+                return "Cas non prévu par l'application";
+        }
+    }
 </script>
 
 <template>
@@ -172,22 +201,66 @@
                         <p class="stat-line"><span class="intro">Prévision 3ème jour : </span><span class="stat">{{ stats.day_3_customers }}</span> personnes</p>
                     </div>
                     <!-- (Pins) -->
-                    <!-- ((All pins)) -->
-                    <div v-for="user, index  of users" :class="'loc-bloc __' + (index+1)" v-if="showAllPins">
+                    <!-- ((Would be a better way to do in the future:)) -->
+                    <!-- <div v-for="user, index  of users" :class="'loc-bloc __' + (index+1)" v-if="showAllPins">
                         <button type="button" class="pin-button"><img class="pin-icon" :src="user.alertActive ? require('@/assets/icons/pic.webp') : require('@/assets/icons/pic-dark.webp')" alt="pins de géolocalisation" /></button>
-                    </div>
+                    </div> -->
 
                     <!-- ((Single pins)) -->
                     <div class="loc-bloc __1" v-if="showPinOne">
-                        <button type="button" class="pin-button" @click="showUserDetails(1)"><img class="pin-icon" src="@/assets/icons/pic-dark.webp" alt="pins de géolocalisation" /></button>
+                        <button type="button" class="pin-button" @click="toggleCard(1)" :disabled="!users[0].alertActive"><img class="pin-icon" src="@/assets/icons/pic-dark.webp" alt="pins de géolocalisation" /></button>
+                        <div class="lb-container" v-if="showCardOne">
+                            <div class="lbc-usercard">
+                                <div class="lbcu-headgroup">
+                                    <h4 class="lbcu-title">Alerte de {{ users[0].firstName }} <span class='upper-txt'>{{ users[0].lastName }}</span></h4>
+                                    <p class="lbcu-date" v-if="users[0].alertActive">Activée le 
+                                        {{ users[0].alertDetails.date.getDate() + '/' + users[0].alertDetails.date.getMonth() + '/' + users[0].alertDetails.date.getFullYear() }}
+                                        à
+                                        {{ users[0].alertDetails.date.getHours() + ':' + users[0].alertDetails.date.getMinutes() + ':' + users[0].alertDetails.date.getSeconds() }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="loc-bloc __2" v-if="showPinTwo">
-                        <button type="button" class="pin-button" @click="showUserDetails(2)"><img class="pin-icon" src="@/assets/icons/pic.webp" alt="pins de géolocalisation" /></button>
+                        <button type="button" class="pin-button" @click="toggleCard(2)" :disabled="!users[1].alertActive"><img class="pin-icon" src="@/assets/icons/pic.webp" alt="pins de géolocalisation" /></button>
+                        <!-- Alert card -->
+                        <div class="lb-container" v-if="showCardTwo">
+                            <div class="lbc-usercard">
+                                <!-- (headgroup) -->
+                                <div class="lbcu-headgroup">
+                                    <h4 class="lbcu-title">Alerte de {{ users[1].firstName }} <span class='upper-txt'>{{ users[1].lastName }}</span></h4>
+                                    <p class="lbcu-date" v-if="users[1].alertActive">Activée le 
+                                        {{ users[1].alertDetails.date.getDate() + '/' + users[1].alertDetails.date.getMonth() + '/' + users[1].alertDetails.date.getFullYear() }}
+                                        à
+                                        {{ users[1].alertDetails.date.getHours() + ':' + users[1].alertDetails.date.getMinutes() + ':' + users[1].alertDetails.date.getSeconds() }}
+                                    </p>
+                                </div>
+                                <!-- (mid content) -->
+                                <div class="lbcu-contents">
+                                    <p class="alert-txt-small"><strong>Type: </strong>{{ getAlertType(users[1].alertDetails.type) }}</p>
+                                    <p class="alert-txt-small"><strong>Intervention: </strong>{{ getAlertStatus(users[1].alertDetails.status) }}</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
 
                         <div class="loc-bloc __3" v-if="showPinThree">
-                        <button type="button" class="pin-button" @click="showUserDetails(3)"><img class="pin-icon" src="@/assets/icons/pic-dark.webp" alt="pins de géolocalisation" /></button>
+                        <button type="button" class="pin-button" @click="toggleCard(3)" :disabled="!users[2].alertActive"><img class="pin-icon" src="@/assets/icons/pic-dark.webp" alt="pins de géolocalisation" /></button>
+                        <div class="lb-container" v-if="showCardThree">
+                            <div class="lbc-usercard">
+                                <div class="lbcu-headgroup">
+                                    <h4 class="lbcu-title">Alerte de {{ users[2].firstName }} <span class='upper-txt'>{{ users[2].lastName }}</span></h4>
+                                    <p class="lbcu-date" v-if="users[2].alertActive">Activée le 
+                                        {{ users[2].alertDetails.date.getDate() + '/' + users[2].alertDetails.date.getMonth() + '/' + users[2].alertDetails.date.getFullYear() }}
+                                        à
+                                        {{ users[2].alertDetails.date.getHours() + ':' + users[2].alertDetails.date.getMinutes() + ':' + users[2].alertDetails.date.getSeconds() }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -338,6 +411,29 @@
             }
             .pin-icon {
                 height: $fsize-l;
+            }
+        }
+        /* Cards */
+        .lb-container {
+            position: relative;
+            .lbc-usercard {
+                position: absolute;
+            }
+        }
+
+        .lbc-usercard {
+            box-sizing: border-box;
+            width: 260px;
+            background-color: $primary;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: $space-m $space-s;
+            border-radius: $radius-xs;
+            font-size: $fsize-s;
+            .lbcu-headgroup {
+                text-transform: uppercase;
+                margin-bottom: $space-m;
             }
         }
     }

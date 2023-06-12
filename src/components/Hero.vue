@@ -12,7 +12,7 @@
                 <p class="hero-subtitle">Louez nos bracelets qui peuvent sauver des vies !</p>
             </div>
             <div class="hero-subcontent">
-                <Button class="hs-btn" color="primary" size="medium">Demandez un devis gratuit en un clic !</Button>
+                <ButtonLink path="/devis" class="hs-btn" color="primary" size="medium">Demandez un devis gratuit en un clic !</ButtonLink>
                 <RouterLink class="white-link" to="/contact" alt="Aller vers la page de contact">
                     Je souhaite être recontacté·e
                 </RouterLink>
@@ -32,10 +32,14 @@
         box-sizing: border-box;
         max-width: $classic-ctn;
         margin: 0 auto;
-        min-height: 400px;
+        min-height: 500px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+
+        @media (max-width: $bp-s) {
+            min-height: 400px;
+        }
     }
     /* Upper half */
     .hero-title-ctn {

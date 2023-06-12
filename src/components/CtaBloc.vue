@@ -8,7 +8,7 @@
     <section class="cta-section">
         <h3 class="cta-title">{{ title  }}</h3>
         <div class="ctas-group">
-            <ButtonLink class="cta cta-btn" color="primary" size="medium" path="/contact">Demandez un devis gratuit en un clic !</ButtonLink>
+            <ButtonLink class="cta cta-btn" color="primary" size="medium" path="/devis">Demandez un devis gratuit en un clic !</ButtonLink>
             <RouterLink class="cta white-link" to="/contact" alt="Aller vers la page de contact">
                 Je souhaite être recontacté·e
             </RouterLink>

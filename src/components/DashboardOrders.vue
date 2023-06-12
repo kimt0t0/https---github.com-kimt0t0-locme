@@ -40,7 +40,7 @@
 <template>
     <div class="dropdown-content-box __orders">
         <div class="dropdown-bloc __with-border __subbloc" v-for="order of orders">
-            <Button class="dropdown-btn" color="white" size="dropdown inbox" type="button" @click="showContent === order.id ? setShowContent(-10) : setShowContent(order.id)">
+            <Button class="dropdown-btn __white" color="white" size="dropdown inbox" type="button" @click="showContent === order.id ? setShowContent(-10) : setShowContent(order.id)">
                 Festival du {{ order.date_start.toLocaleDateString() }}
                 <Icon icon="sort-down" id="devis-dd-icon" />
             </Button>
@@ -62,6 +62,12 @@
         line-height: 2;
         .order-title {
             margin-bottom: 1rem;
+        }
+    }
+
+    .dropdown-btn {
+        &.__white {
+            color: $dark !important;
         }
     }
 </style>

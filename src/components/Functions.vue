@@ -30,7 +30,7 @@
     <section class="section-functions">
         <div class="sf-background-container">
             <div class="sf-container">
-                <HeroSecondary color="white" icon="primary" background="classic">
+                <HeroSecondary color="white" icon="primary" background="classic" class="sf-title">
                     Fonctionnalités et caractéristiques du bracelet
                 </HeroSecondary>
                 <ul class="functions-list">
@@ -68,6 +68,12 @@
         margin: 0 auto;
         padding: $space-l 0;
     }
+
+    .sf-title {
+        background-color: rgba(0, 0, 0, 0.6) !important;
+        padding: $space-s !important;
+    }
+
     .functions-list {
         box-sizing: border-box;
         display: flex;

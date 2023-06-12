@@ -1,5 +1,10 @@
 <script lang="ts" setup>
     import { ref } from 'vue';
+    import { useRoute } from 'vue-router';
+
+    const route = useRoute();
+    
+    const userType = route.params.type;
 
     const showPassword = ref<boolean>(true)
     const toggleShowPassword = () => {
@@ -48,13 +53,14 @@
                         <input class="form-input" id="email" placeholder="kim@locme.fr" /> 
                     </div>
                     <!-- Nom de l'entreprise / association -->
-                    <div class="sf-input-group">
+                    <div class="sf-input-group" v-if="userType === 'orga'">
                         <label class="form-label" for="business">Entreprise / Association :</label>
                         <input class="form-input" id="business" placeholder="Hellfest" /> 
                     </div>
                 </div>
+
                 <!-- Festivals -->
-                <div class="sf-festivals">
+                <div class="sf-festivals"  v-if="userType === 'orga'">
                     <div v-for="index of festivalsCounter" class="sff-group" :id="'sffestival_'  + index">
                         <div class="ssf-headline">
                             <h2 class="form-subtitle">Festival n°{{ index }}</h2>
@@ -86,6 +92,40 @@
                         <Button type="button" color="primary" size="medium" class="add-festival" @click="addFestival">+</Button>
                     </div>
                 </div>
+
+                <!-- Friends -->
+                    <div class="sf-festivals"  v-if="userType === 'fest'">
+                        <div v-for="index of festivalsCounter" class="sff-group" :id="'sffestival_' + index">
+                            <div class="ssf-headline">
+                                <h2 class="form-subtitle">Ami n°{{ index }}</h2>
+                                <div class="sf-input-group __removal">
+                                    <Button color="primary" size="medium" type="button" @click="onDeleteFestival">
+                                        <Icon icon="trash" />
+                                    </Button>
+                                </div>
+                            </div>
+                            <div class="sf-line">
+                                <div class="sf-input-group">
+                                    <label class="form-label __small" :for="'friendLastName-' + index">Nom:</label>
+                                    <input class="form-input __small" :id="'friendLastName-' + index" placeholder="nom du festival" />
+                                </div>
+                                <div class="sf-input-group">
+                                    <label class="form-label __small" :for="'friendFirstName-' + index">Prénom:</label>
+                                    <input class="form-input __small" :id="'friendFirstName-' + index" placeholder="nom du festival" />
+                                </div>
+                            </div>
+                            <div class="sf-line">
+                                    <div class="sf-input-group">
+                                        <label class="form-label __small" :for="'friendUserame-' + index">Pseudo:</label>
+                                        <input class="form-input __small" :id="'friendUserame-' + index" placeholder="nom du festival" />
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="sff-btn-ctn">
+                            <Button type="button" color="primary" size="medium" class="add-festival" @click="addFestival">+</Button>
+                        </div>
+                    </div>
+
                 <!-- Submission -->
                 <div class="submit-group">
                     <!-- <Button color="primary" size="large">Je m'inscris</Button> -->
