@@ -94,6 +94,7 @@ defineProps<{
             &:hover, &:focus {
                 border: 1px solid #fff;
                 background-color: transparent;
+                color: #fff;
             }
     }
     /* Sizes */

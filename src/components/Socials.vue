@@ -7,17 +7,17 @@ const socials: {
     {
         name: 'Facebook',
         icon: require('@/assets/icons/sn-facebook.webp'),
-        path: '#'
+        path: 'http://www.facebook.com/profile.php?id=100093000543596'
     },
     {
         name: 'Instagram',
         icon: require('@/assets/icons/sn-instagram.webp'),
-        path: '#'
+        path: 'https://www.instagram.com/locme_officiel'
     },
     {
-        name: 'Twitter',
-        icon: require('@/assets/icons/sn-twitter.webp'),
-        path: '#'
+        name: 'LinkedIn',
+        icon: require('@/assets/icons/sn-linkedin.webp'),
+        path: 'https://www.linkedin.com/company/locme/'
     },
     {
         name: 'TikTok',

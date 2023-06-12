@@ -8,8 +8,8 @@
             lastName: 'Instinct',
             firstName: 'Albert',
             groupNum: '145',
-            latitude: 0,
-            longitude: 0,
+            latitude: 1,
+            longitude: 4.5,
             alertActive: false
         },
         {
@@ -17,16 +17,17 @@
             lastName: 'Orbien',
             firstName: 'Georges',
             groupNum: '123',
-            latitude: 0,
-            longitude: 0,
+            latitude: -2,
+            longitude: -3,
             alertActive: true,
             alertDetails: [
                 {
                     date: new Date(),
-                    latitude: 0,
-                    longitude: 0,
+                    latitude: -2,
+                    longitude: -4,
                     type: 'VIOLENCE',
-                    urgent: true
+                    urgent: true,
+                    status: 'pending'
                 }
             ]
         },
@@ -35,16 +36,17 @@
             lastName: 'Grenier',
             firstName: 'Hermione',
             groupNum: '',
-            latitude: 0,
-            longitude: 0,
+            latitude: 2,
+            longitude: 5,
             alertActive: false,
             alertDetails: [
                 {
-                    date: new Date(),
+                    date: new Date(2023-6-12, 22, 3, 56),
                     latitude: 0,
                     longitude: 0,
                     type: 'HEALTH',
-                    urgent: false
+                    urgent: false,
+                    status: 'over'
                 }
             ]
         }
@@ -56,6 +58,70 @@
         day_2_customers: 1483,
         day_3_customers: 1614
     })
+
+    // Handle location pins
+    const showPinOne = ref<boolean>(false);
+    const showPinTwo = ref<boolean>(false);
+    const showPinThree = ref<boolean>(false);
+    
+    const showAllPins = ref<boolean>(false);
+
+    const showPin = (userId: number) => {
+        showAllPins.value = false;
+        switch (userId) {
+            case 1: 
+                showPinOne.value = true;
+                showPinTwo.value = false;
+                showPinThree.value = false;
+                break;
+            case 2:
+                showPinTwo.value = true;
+                showPinOne.value = false;
+                showPinThree.value = false;
+                break;
+            case 3:  
+                showPinThree.value = true;
+                showPinOne.value = false;
+                showPinTwo.value = false;
+                break;
+            default:
+                console.log('Utilisation non autorisée !')
+        }
+    }
+
+    const toggleAllPins = () => {
+        showAllPins.value = !showAllPins.value
+
+        if (showAllPins.value === true) {
+            showPinOne.value = true;
+            showPinTwo.value = true;
+            showPinThree.value = true;
+        } else {
+            showPinOne.value = false;
+            showPinTwo.value = false;
+            showPinThree.value = false;
+        }
+    }
+
+    // Handle users cards
+    const showCardOne = ref<boolean>(false);
+    const showCardTwo = ref<boolean>(false);
+    const showCardThree = ref<boolean>(false);
+    const toggleCard = (num: number) => {
+        switch (num) {
+            case 1:
+                showCardOne.value = !showCardOne.value;
+                break;
+            case 2:
+                showCardTwo.value = !showCardTwo.value;
+                break;
+            case 3:
+                showCardThree.value = !showCardThree.value;
+                break;
+            default:
+                console.log('Utilisation non prévue !');
+        }
+    }
 </script>
 
 <template>
@@ -83,14 +149,16 @@
                                 Liste des utilisatrices
                             </h4>
                             <div class="ullc-sorting-box">
-                                <Button class="sorting-button" color="white" size="medium" type="button" align="left">Par numéro de groupe</Button>
-                                <Button class="sorting-button" color="white" size="medium" type="button" align="left">Par nom</Button>
+                                <!-- <Button class="sorting-button" color="white" size="medium" type="button" align="left">Par numéro de groupe</Button>
+                                <Button class="sorting-button" color="white" size="medium" type="button" align="left">Par nom</Button> -->
+                                <Button class="sorting-button" color="white" size="medium" type="button" align="left" @click="toggleAllPins">{{ showAllPins ? 'Cacher tout' : 'Voir tout' }}</Button>
                             </div>
                             <ol class="users-list">
                                 <li v-for="user of users" class="ul-item">
-                                    <Button class="user-btn" color="transparent-white" size="medium" align="left">
+                                    <Button class="user-btn" color="transparent-white" size="medium" align="left" @click="showPin(user.id)">
                                         <Icon icon="location-dot" />
-                                        <span class='ul-bigger'>{{ user.lastName }}</span> {{ ' ' + user.firstName }}
+                                        <Icon icon="triangle-exclamation" v-if="user.alertActive" />
+                                        <span class='ul-bigger'>{{ user.lastName }}</span>{{ '&nbsp;' + user.firstName }}
                                     </Button>
                                 </li>
                             </ol>
@@ -102,6 +170,24 @@
                         <p class="stat-line"><span class="intro">Prévision 1er jour : </span><span class="stat">{{ stats.day_1_customers }}</span> personnes</p>
                         <p class="stat-line"><span class="intro">Prévision 2ème jour : </span><span class="stat">{{ stats.day_2_customers }}</span> personnes</p>
                         <p class="stat-line"><span class="intro">Prévision 3ème jour : </span><span class="stat">{{ stats.day_3_customers }}</span> personnes</p>
+                    </div>
+                    <!-- (Pins) -->
+                    <!-- ((All pins)) -->
+                    <div v-for="user, index  of users" :class="'loc-bloc __' + (index+1)" v-if="showAllPins">
+                        <button type="button" class="pin-button"><img class="pin-icon" :src="user.alertActive ? require('@/assets/icons/pic.webp') : require('@/assets/icons/pic-dark.webp')" alt="pins de géolocalisation" /></button>
+                    </div>
+
+                    <!-- ((Single pins)) -->
+                    <div class="loc-bloc __1" v-if="showPinOne">
+                        <button type="button" class="pin-button" @click="showUserDetails(1)"><img class="pin-icon" src="@/assets/icons/pic-dark.webp" alt="pins de géolocalisation" /></button>
+                    </div>
+
+                    <div class="loc-bloc __2" v-if="showPinTwo">
+                        <button type="button" class="pin-button" @click="showUserDetails(2)"><img class="pin-icon" src="@/assets/icons/pic.webp" alt="pins de géolocalisation" /></button>
+                    </div>
+
+                        <div class="loc-bloc __3" v-if="showPinThree">
+                        <button type="button" class="pin-button" @click="showUserDetails(3)"><img class="pin-icon" src="@/assets/icons/pic-dark.webp" alt="pins de géolocalisation" /></button>
                     </div>
                 </div>
             </div>
@@ -138,6 +224,7 @@
         max-height: 600px;
         border: 2px solid $grey;
         border-radius: $radius-xxs;
+        position: relative;
         display: flex;
         .mc-frame {
             width: 100%;
@@ -220,6 +307,37 @@
             >.stat {
                 color: $primary;
                 margin-left: $space-s;
+            }
+        }
+    }
+
+    /* Pins */
+    .loc-bloc {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        &.__1 {
+            top: 2rem;
+            left: 18rem;
+        }
+        &.__2 {
+            top: 5rem;
+            right: 4rem;
+        }
+        &.__3 {
+            top: 15rem;
+            left: 32rem;
+        }
+        .pin-button {
+            background-color: transparent;
+            border: transparent;
+            cursor: pointer;
+            transition: all 200ms ease-in;
+            &:hover, &:focus {
+                transform: scale(1.25);
+            }
+            .pin-icon {
+                height: $fsize-l;
             }
         }
     }
