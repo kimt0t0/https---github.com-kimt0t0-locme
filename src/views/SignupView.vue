@@ -11,6 +11,10 @@
     const addFestival = () => {
         festivalsCounter.value += 1;
     }
+
+    const onDeleteFestival = () => {
+        festivalsCounter.value -= 1;
+    }
 </script>
 
 <template>
@@ -51,14 +55,11 @@
                 </div>
                 <!-- Festivals -->
                 <div class="sf-festivals">
-                    <div class="sff-btn-ctn">
-                        <Button type="button" color="white" class="add-festival" @click="addFestival">+</Button>
-                    </div>
                     <div v-for="index of festivalsCounter" class="sff-group" :id="'sffestival_'  + index">
                         <div class="ssf-headline">
                             <h2 class="form-subtitle">Festival n°{{ index }}</h2>
                             <div class="sf-input-group __removal">
-                                <Button color="primary" size="medium" type="button">
+                                <Button color="primary" size="medium" type="button" @click="onDeleteFestival">
                                     <Icon icon="trash" />
                                 </Button>
                             </div>
@@ -80,6 +81,9 @@
                             </div>
                         </div>
 
+                    </div>
+                    <div class="sff-btn-ctn">
+                        <Button type="button" color="primary" size="medium" class="add-festival" @click="addFestival">+</Button>
                     </div>
                 </div>
                 <!-- Submission -->
@@ -144,8 +148,20 @@
         width: 350px;
         &.__removal {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             align-items: center;
+            margin: 0;
         }
+    }
+
+    .add-festival {
+        margin: $space-m 0;
+    }
+
+    .submit-group {
+        padding: $space-xl 0 $space-m;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 </style>
