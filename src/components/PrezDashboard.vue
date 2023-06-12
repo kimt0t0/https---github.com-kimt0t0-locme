@@ -27,14 +27,28 @@
     .prezdashboard-section {
         background-color: $primary;
         padding: $space-xl 0 $space-xxxl;
+
+        @media (max-width: $bp-m) {
+            padding: 0;
+        }
         .pds-container {
             box-sizing: border-box;
             max-width: $classic-ctn;
             margin: 0 auto;
+
+            @media (max-width: $bp-m) {
+                margin: 0;
+                padding: $space-xl $space-l;
+            }
         }
         .pds-contents {
             display: flex;
             justify-content: space-between;
+
+            @media (max-width: $bp-m) {
+                flex-direction: column;
+                justify-content: flex-start;
+            }
         }
     }
 
@@ -44,8 +58,19 @@
         background-color: $grey;
         border-radius: $radius-xxs;
         border: 1px solid #bfbfbf;
+        object-fit: contain;
+
+        @media (max-width: $bp-m) {
+            width: 100%;
+            height: auto;
+        }
     }
     .classic-list-cp {
         width: 42%;
+
+        @media (max-width: $bp-m) {
+            width: 100%;
+            padding: $space-l 0;
+        }
     }
 </style>

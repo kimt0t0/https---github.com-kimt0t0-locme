@@ -48,6 +48,10 @@
     .customers-list {
         display: flex;
         justify-content: space-between;
+
+        @media (max-width: $bp-m) {
+            flex-direction: column;
+        }
     }
 
     .customer-item {
@@ -59,6 +63,12 @@
         justify-content: flex-end;
         align-items: center;
         position: relative;
+
+        @media (max-width: $bp-m) {
+            width: 100%;
+            margin: $space-l 0;
+        }
+
         .ci-photo {
             width: 240px;
             height: 245px;

@@ -6,22 +6,22 @@ const socials: {
 }[] = [
     {
         name: 'Facebook',
-        icon: 'globe',
+        icon: require('@/assets/icons/sn-facebook.webp'),
         path: '#'
     },
     {
         name: 'Instagram',
-        icon: 'globe',
+        icon: require('@/assets/icons/sn-instagram.webp'),
         path: '#'
     },
     {
         name: 'Twitter',
-        icon: 'globe',
+        icon: require('@/assets/icons/sn-twitter.webp'),
         path: '#'
     },
     {
         name: 'TikTok',
-        icon: 'globe',
+        icon: require('@/assets/icons/sn-tiktok.webp'),
         path: '#'
     }
 ]
@@ -30,7 +30,7 @@ const socials: {
 <template>
     <div class="socials-list">
         <a  v-for="social in socials" class="social-link" :href="social.path" target="_blank" :title="'Visitez notre page' + social.name">
-            <Icon :icon="social.icon" />
+            <img :src="social.icon" class="social-icon" :alt="'icone du réseau social ' + social.name" />
         </a>
     </div>
 </template>
@@ -41,14 +41,14 @@ const socials: {
 .socials-list {
     display: flex;
     .social-link {
-        font-size: $fsize-m;
-        color: white;
         text-decoration: none;
         margin: 0 $space-s;
         transition: all 300ms ease-in;
+        .social-icon {
+            height: $fsize-l;
+        }
         &:hover, &:focus {
-            color: $primary;
-            transform: rotate(8deg);
+            transform: rotate(12deg);
         }
     }
 }

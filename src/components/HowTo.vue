@@ -29,16 +29,31 @@
         padding: $space-l 0;
         background-color: lighten($primary, 40%);
         position: relative;
+
+        @media (max-width: $bp-m) {
+            padding: 0 0 $space-l;
+        }
+
         .htc-container {
             display: flex;
             justify-content: space-between;
             width: 100%;
             max-width: $classic-ctn;
             margin: 0 auto;
+
+            @media (max-width: $bp-m) {
+                flex-direction: column-reverse;
+                justify-content: flex-start;
+            }
         }
         .htc-content-bloc {
             width: 55%;
             box-sizing: border-box;
+
+            @media (max-width: $bp-m) {
+                width: 100%;
+                padding: 0 $space-s;
+            }
         }
         .htc-illus {
             height: 100%;
@@ -50,6 +65,13 @@
             top: 0;
             bottom: 0;
             right: 0;
+
+            @media (max-width: $bp-m) {
+                position: initial;
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+            }
         }
     }
 </style>

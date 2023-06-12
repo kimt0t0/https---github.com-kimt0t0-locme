@@ -50,5 +50,10 @@
         border: 1px solid #bfbfbf;
         background-color: $primary;
         margin: $space-l auto;
+
+        @media (max-width: $bp-m) {
+            width: 100%;
+            height: auto;
+        }
     }
 </style>

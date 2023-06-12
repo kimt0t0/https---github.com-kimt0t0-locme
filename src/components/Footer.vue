@@ -58,8 +58,14 @@
     color: white;
     font-size: 14px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+
+    @media (max-width: $bp-m) {
+        margin: 0;
+        flex-direction: column;
+    }
+
     .logo-footer {
         width: 80px;
     }
@@ -72,8 +78,22 @@
             text-decoration: underline;
         }
     }
+
+    .fc-list-links {
+        padding: $space-m 0;
+        .fcll-item {
+            @media (max-width: $bp-m) {
+                text-align: center;
+            }
+        }
+    }
     .footer-txt {
         line-height: 1.5;
+
+        @media (max-width: $bp-m) {
+            text-align: center;
+            line-height: 1.5;
+        }
     }
 }
 </style>
